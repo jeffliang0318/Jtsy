@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const sessionLinks = () => (
   <div className="login-signup">
-    <Link to="/signup">Register</Link>
+    <Link to="/register">Register</Link>
     &nbsp;&nbsp;
     <Link to="/login">Login</Link>
   </div>
@@ -11,7 +11,7 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout) => (
 	<hgroup className="header-group">
-    <h2 className="header-name">Hi, {currentUser.name}!</h2>
+    <h2 className="header-name">{currentUser.name} is in the house!</h2>
     <button className="header-button" onClick={logout}>Log Out</button>
 	</hgroup>
 );

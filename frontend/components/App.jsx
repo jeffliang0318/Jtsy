@@ -10,6 +10,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
 const App = () => (
@@ -24,8 +25,8 @@ const App = () => (
     </header>
 
     <Switch>
-      <Route path="/login" component={LogInFormContainer} />
-      <Route path="/signup" component={SignUpFormContainer} />
+      <AuthRoute exact path="/login" component={LogInFormContainer} />
+      <AuthRoute exact path="/register" component={SignUpFormContainer} />
     </Switch>
   </div>
 );
