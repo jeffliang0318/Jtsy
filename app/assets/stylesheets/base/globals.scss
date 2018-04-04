@@ -1,0 +1,46 @@
+// Colors for dark-theme
+$dark: #1B1B1D;
+$darker: #0e0d0d;
+$basically-black: #040d14;
+// Colors for light-theme
+$white: #FFF;
+$light-grey: #f4f4f5;
+$lightest-grey: #fafafa;
+$grey: #171718;
+
+// Miscellaneous colors
+$red: #f45531;
+$green: #21ce99;
+
+
+
+
+// Typeface
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400,500,600,700');
+
+// Headers
+
+html {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.05px;
+  line-height: 26px;
+  margin-bottom: 22px;
+}

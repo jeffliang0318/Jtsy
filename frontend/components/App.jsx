@@ -15,7 +15,7 @@ import {
 const App = () => (
   <div>
     <header>
-      <nav>
+      <nav className="navbar">
         <Link to="/" className="header-link">
           <h1>Jtsy</h1>
         </Link>

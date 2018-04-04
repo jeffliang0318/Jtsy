@@ -1,0 +1,16 @@
+@import "../base/globals";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-link {
+  text-decoration: none;
+  color: orange;
+}
+
+.login-signup {
+  text-decoration: none;
+}
