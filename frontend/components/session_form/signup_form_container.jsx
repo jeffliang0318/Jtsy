@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { signup } from '../../actions/session_actions';
 import RegisterForm from './register_form';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ({ errors }) => {
   return {
@@ -14,6 +15,12 @@ const mapStateToProps = ({ errors }) => {
 const mapDispatchToProps = dispatch => {
   return {
     processForm: (user) => dispatch(signup(user)),
+    otherForm: (
+      <button onClick={() => dispatch(openModal('signup'))}>
+        Login
+      </button>
+    ),
+    closeModal: () => dispatch(closeModal())
   };
 };
 
