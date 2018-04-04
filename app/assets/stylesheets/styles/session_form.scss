@@ -1,18 +1,29 @@
 @import "../base/globals";
-
-.navbar {
+header {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
   align-items: center;
   border-bottom: 1px solid $light-grey;
-  padding: 5px;
 }
 
+header nav button {
+  color: white;
+  background-color: orange;
+  border-radius: 5px;
+  border: none;
+}
 .header-link {
   text-decoration: none;
   color: orange;
 }
+.header-group {
+  display: flex;
+}
 
+.header-button {
+  margin-left: 20px;
+}
 .login-signup a{
   text-decoration: none;
   border: 1px solid orange;
@@ -39,6 +50,7 @@
   color: white;
   background: orange;
   border-radius: 5px;
+  border: none;
 }
 .modal-child {
   position: absolute;
