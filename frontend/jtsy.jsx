@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {login, signup, logout} from './util/session_api_util';
+import Root from './components/root';
 import configureStore from "./store/store";
-import {receiveCurrentUser} from "./actions/session_actions";
+import {login,signup,logout} from "./actions/session_actions";
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   const store = configureStore();
@@ -11,6 +11,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.logout = logout;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.receiveCurrentUser = receiveCurrentUser;
-  ReactDOM.render(<h1>Welcome to Jtsy</h1>, root);
+  ReactDOM.render(<Root store={store} />, root);
 });
