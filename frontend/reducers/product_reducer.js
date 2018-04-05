@@ -10,7 +10,7 @@ import {RECEIVE_ALL_PRODUCTS,
       case RECEIVE_ALL_PRODUCTS:
         return action.products;
       case RECEIVE_PRODUCT:
-        return merge(oldState, {[action.post.id]: action.product});
+        return merge(oldState, {[action.product.id]: action.product});
       case REMOVE_PRODUCT:
         let newState = merge(oldState, {});
         delete newState[action.id];
