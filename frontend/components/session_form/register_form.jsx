@@ -41,6 +41,10 @@ class RegisterForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
+          <div className='switchTab'>
+            {this.props.registerForm}
+            {this.props.signupForm}
+          </div>
           Welcome to Jtsy!
           <br/>
           {this.renderErrors()}

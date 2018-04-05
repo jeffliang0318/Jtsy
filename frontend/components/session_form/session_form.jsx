@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -40,6 +41,10 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
+        <div className='switchTab'>
+          {this.props.registerForm}
+          {this.props.signupForm}
+        </div>
         Welcome Back!
         <section id="login-modal" className="login-modal">
           <form onSubmit={this.handleSubmit} className="login-form-box">
