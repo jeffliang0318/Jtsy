@@ -29,7 +29,7 @@
     "postinstall": "webpack"
   },
   "engines": {
-    "node": "4.1.1",
+    "node": "6.10.1",
     "npm": "3.10.10"
   },
   "repository": {
