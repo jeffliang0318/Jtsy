@@ -26,7 +26,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch",
-    "postinstall": "webpack"
+    "postinstall": "webpack --display-error-details"
+
   },
   "engines": {
     "node": "6.10.1",
