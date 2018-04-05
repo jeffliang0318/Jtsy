@@ -42,5 +42,5 @@ export const updateProduct = product => dispatch => (
 );
 
 export const deleteProduct = id => dispatch => (
-  APIUtil.deleteProduct(id).then(product => dispatch(deleteProduct(product.id)))
+  APIUtil.deleteProduct(id).then(product => dispatch(removeProduct(product.id)))
 );
