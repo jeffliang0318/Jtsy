@@ -5,6 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Product.destroy_all
 
-users = User.create([{email: "123@123.com", name: "123", password: "123123"},{email: "456@456.com", name: "456", password: "456456"},
-  {email: "user@user.com", password: "123456", name: "Tester"}])
+user1 = User.create({email: "bearing@cearing.com", name: "Bear", password: "password"})
+user2 = User.create({email: "456@456.com", name: "456", password: "456456"})
+user3 = User.create({email: "user@user.com", password: "123456", name: "Tester"})
+
+products = Product.create([
+  {user_id: user1.id, img_url: "./figure this out later", title: "Bearings with Housings-BGSRB624ZZ",
+    description: "Direct Mount, Standard with Pilot, Retained",
+    quantity: 20, price: 38.62},
+  {user_id: user1.id, img_url: "./figure this out later", title: "Bearings with Housings-BGSRB624ZZ",
+    description: "Direct Mount, Standard with Pilot, Retained", price: 38.62},
+  {user_id: user1.id, img_url: "./figure this out later", title: "Bearings with Housings-BGSRB624ZZ",
+    description: "Direct Mount, Standard with Pilot, Retained",
+    quantity: 20, price: 20.5}
+  ])
+
+  # {user_id: 1, img_url: "./figure this out later", title: "Bearings with Housings-BGSRB624ZZ", description: "Direct Mount, Standard with Pilot, Retained", quantity: 20, price: -38.62}
