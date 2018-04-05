@@ -22,8 +22,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
-    this.props.closeModal();
+    this.props.processForm(user).then(() =>this.props.closeModal());
   }
 
   renderErrors() {
@@ -43,7 +42,7 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <div className='switchTab'>
           {this.props.registerForm}
-          {this.props.signupForm}
+          {this.props.loginForm}
         </div>
         Welcome Back!
         <section id="login-modal" className="login-modal">

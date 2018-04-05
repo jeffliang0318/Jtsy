@@ -21,8 +21,7 @@ class RegisterForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
-    this.props.closeModal();
+    this.props.processForm(user).then(() =>this.props.closeModal());
   }
 
   renderErrors() {
@@ -43,7 +42,7 @@ class RegisterForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <div className='switchTab'>
             {this.props.registerForm}
-            {this.props.signupForm}
+            {this.props.loginForm}
           </div>
           Welcome to Jtsy!
           <br/>
