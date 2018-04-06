@@ -15,7 +15,7 @@ class ProductShow extends React.Component {
     return(
       <div className='main-show'>
         <div className="left-column">
-          <img src={product.img_url}/>
+          <img className="product-img" src={product.img_url}/>
           <div className="description">
             <h2>Description</h2>
             <p>{product.description}</p>
