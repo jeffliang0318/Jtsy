@@ -7,9 +7,9 @@ const ProductItem = ({ product }) => {
     <li className='product-index-item'>
       <Link to={`/product/${product.id}`}>
         <img src={product.img_url} height="100"></img>
-        <span>
+        <span className="item-des">
           <strong>{product.title}</strong>
-          <strong>Price{product.price}</strong>
+          <strong>${product.price}</strong>
         </span>
       </Link>
     </li>);

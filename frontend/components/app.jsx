@@ -24,9 +24,7 @@ const App = () => (
       </Link>
       <GreetingContainer />
     </header>
-    <div className='main'>
       <ProductIndexContainer/>
-    </div>
   </div>
 );
 

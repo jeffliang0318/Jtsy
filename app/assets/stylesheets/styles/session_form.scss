@@ -7,7 +7,7 @@ header {
   border-bottom: 1px solid $light-grey;
 }
 
-header nav button {
+header div button {
   color: white;
   background-color: orange;
   border-radius: 5px;
@@ -16,6 +16,7 @@ header nav button {
 .header-link {
   text-decoration: none;
   color: orange;
+  font-size: 30px;
 }
 .header-group {
   display: flex;

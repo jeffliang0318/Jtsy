@@ -1,16 +1,38 @@
 .product-index a {
   text-decoration: none;
 }
-.product-index-items {
+.product-index-items li {
+  float: left;
+  width: 170px;
+  height: 200px;
+  margin: 10px;
+}
+.product-index-items li a {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+
 }
 .product-index-item a{
   display: inline-grid;
+}
+.product-index-item a img{
+  border: 1px solid #f4f4f5;
+  padding: 10px;
 }
 .main {
   padding: 40px;
 }
 
 .product-index-item {
+  width: min-content;
   padding:15px;
+}
+.item-des {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-des strong {
+  padding-top: 10px;
 }

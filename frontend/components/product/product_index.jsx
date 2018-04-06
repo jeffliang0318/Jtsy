@@ -15,11 +15,13 @@ class ProductIndex extends React.Component {
       });
 
     return (
+    <div className='main'>
       <div className='product-index'>
         <ul className='product-index-items'>
           {products}
         </ul>
       </div>
+    </div>
     );
   }
 }
