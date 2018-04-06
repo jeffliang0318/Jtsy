@@ -15,6 +15,7 @@ import LoginFormContainer from './session_form/login_form_container.jsx';
 import SignupFormContainer from './session_form/signup_form_container.jsx';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProductIndexContainer from './product/product_index_container';
+import ProductShowContainer from './product/product_show_container';
 const App = () => (
   <div>
     <Modal />
@@ -26,6 +27,7 @@ const App = () => (
     </header>
     <Switch>
       <Route exact path="/" component={ProductIndexContainer}/>
+        <Route exact path="/product/:id" component={ProductShowContainer}/>
       <Redirect to="/"/>
     </Switch>
   </div>
