@@ -24,7 +24,7 @@ const mapDispatchToProps = dispatch => {
       </button>
     ),
     registerForm:
-        "Register",
+        <span>Register</span>,
   };
 };
 

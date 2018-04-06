@@ -1,10 +1,13 @@
 @import "../base/globals";
 header {
+  padding: 10px;
+  border-bottom: 1px solid $light-grey;
+}
+
+header nav {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
   align-items: center;
-  border-bottom: 1px solid $light-grey;
 }
 
 header div button {
@@ -12,11 +15,17 @@ header div button {
   background-color: orange;
   border-radius: 5px;
   border: none;
+  font-size: 3vh;
+}
+.session-form {
+  padding: 30px;
 }
 .header-link {
   text-decoration: none;
+}
+.header-link h1 {
   color: orange;
-  font-size: 30px;
+  font-size: 5vh;
 }
 .header-group {
   display: flex;
@@ -52,6 +61,7 @@ header div button {
   background: orange;
   border-radius: 5px;
   border: none;
+  font-size: 20px;
 }
 .modal-child {
   position: absolute;
@@ -59,10 +69,34 @@ header div button {
   left: 50%;
   transform: translate(-50%, -50%);
   background: white;
-  padding: 15px;
-  border-radius: 20px;
 }
 
 .register-button {
   border-bottom: none;
+}
+
+.errors {
+  color: red;
+}
+.switchTab button{
+  background-color: #A9A9A9;
+  padding-right: 7px;
+  padding-left: 7px;
+  font-size: 20px;
+  border: none;
+}
+
+.login-signup button:hover {
+  cursor: pointer;
+}
+
+.switchTab {
+  background-color: #A9A9A9;
+}
+.switchTab span {
+  font-size: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 7px;
+  background-color: white;
 }

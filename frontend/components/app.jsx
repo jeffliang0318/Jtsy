@@ -20,14 +20,11 @@ const App = () => (
   <div>
     <Modal />
     <header>
-      <Link to="/" className="header-link">
-        <h1>Jtsy</h1>
-      </Link>
       <GreetingContainer />
     </header>
     <Switch>
       <Route exact path="/" component={ProductIndexContainer}/>
-        <Route exact path="/product/:id" component={ProductShowContainer}/>
+      <Route exact path="/product/:id" component={ProductShowContainer}/>
       <Redirect to="/"/>
     </Switch>
   </div>
