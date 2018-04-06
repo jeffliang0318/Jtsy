@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ProductItem from './product_item';
 class ProductIndex extends React.Component {
 
   componentDidMount(){
@@ -7,16 +7,16 @@ class ProductIndex extends React.Component {
   }
 
   render(){
-    const products = this.props.products.map(product => {
-      return (
-        <h3>{product.img_url}</h3>
-      );
-    });
+    const products = this.props.products.map(
+      product => {
+        return (
+          <ProductItem key={product.id} product={product}/>
+        );
+      });
 
     return (
-      <div>
-        <ul>
-          TEEHEE
+      <div className='product-index'>
+        <ul className='product-index-items'>
           {products}
         </ul>
       </div>

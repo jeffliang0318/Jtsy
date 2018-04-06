@@ -18,7 +18,9 @@ class SessionForm extends React.Component {
       [field]: e.currentTarget.value
     });
   }
-
+  componentWillMount(){
+    this.props.clearError();
+  }
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);

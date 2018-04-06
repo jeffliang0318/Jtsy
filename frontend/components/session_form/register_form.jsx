@@ -17,6 +17,9 @@ class RegisterForm extends React.Component {
       [field]: e.currentTarget.value
     });
   }
+  componentWillMount(){
+    this.props.clearError();
+  }
 
   handleSubmit(e) {
     e.preventDefault();
