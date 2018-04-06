@@ -24,7 +24,10 @@ const App = () => (
       </Link>
       <GreetingContainer />
     </header>
-      <ProductIndexContainer/>
+    <Switch>
+      <Route exact path="/" component={ProductIndexContainer}/>
+      <Redirect to="/"/>
+    </Switch>
   </div>
 );
 
