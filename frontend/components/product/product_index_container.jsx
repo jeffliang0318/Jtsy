@@ -3,7 +3,7 @@ import ProductIndex from './product_index';
 import {fetchProducts} from '../../actions/product_actions';
 
 const mapStateToProps = state => ({
-  products: Object.values(state.product),
+  products: Object.values(state.entities.product),
 });
 
 

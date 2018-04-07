@@ -25,6 +25,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={ProductIndexContainer}/>
       <Route exact path="/product/:id" component={ProductShowContainer}/>
+      <ProtectedRoute exact path="/product/new" />
       <Redirect to="/"/>
     </Switch>
   </div>

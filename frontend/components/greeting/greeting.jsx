@@ -8,6 +8,9 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
         <h1>Jtsy</h1>
       </Link>
       <div className="login-signup">
+        <Link to='/product/new'>
+          Sell on Jtsy
+        </Link>
         <button
           onClick={() => login({email: "user@user.com", password: "123456"})}>
           DEMO</button>
