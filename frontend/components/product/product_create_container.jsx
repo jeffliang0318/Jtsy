@@ -5,9 +5,10 @@ import { openModal } from '../../actions/modal_actions';
 import ProductCreate from "./product_create";
 
 const mapStateToProps = (state) => ({
-  erroes: state.errors.session,
+  errors: state.errors.session,
   formType: "Create",
-  loggedIn: Boolean(state.ui.session.currentUser)
+  loggedIn: Boolean(state.ui.session.currentUser),
+  currentUser: state.ui.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => {
