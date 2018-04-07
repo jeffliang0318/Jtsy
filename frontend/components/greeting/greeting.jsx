@@ -8,7 +8,7 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
         <h1>Jtsy</h1>
       </Link>
       <div className="login-signup">
-        <Link to='/product/new'>
+        <Link className="sell-link" to='/products'>
           Sell on Jtsy
         </Link>
         <button
@@ -22,13 +22,18 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
     </nav>
   );
   const personalGreeting = () => (
-      <hgroup className="header-group">
+      <nav className="nav-bar">
         <Link to="/" className="header-link">
           <h1>Jtsy</h1>
         </Link>
-        <h2 className="header-name">Hi, {currentUser.name}!</h2>
-        <button className="header-button" onClick={logout}>Log Out</button>
-      </hgroup>
+        <div className="loogedIn-user">
+          <Link className="sell-link" to='/products'>
+            Sell on Jtsy
+          </Link>
+          <h2 className="header-name">Hi, {currentUser.name}!</h2>
+          <button className="header-button" onClick={logout}>Log Out</button>
+        </div>
+      </nav>
   );
 
   return (

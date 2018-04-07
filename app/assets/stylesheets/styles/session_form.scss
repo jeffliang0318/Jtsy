@@ -8,8 +8,19 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
-
+.loogedIn-user {
+  display: flex;
+  align-items: center;
+}
+.sell-link {
+  font-size: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  color: orange;
+}
 header div button {
   color: white;
   background-color: orange;
@@ -33,13 +44,6 @@ header div button {
 
 .header-button {
   margin-left: 20px;
-}
-.login-signup a{
-  text-decoration: none;
-  border: 1px solid orange;
-  border-radius: 5px;
-  color: orange;
-  padding: 5px;
 }
 
 .modal-background {

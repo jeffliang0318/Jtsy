@@ -3,8 +3,8 @@ import { openModal } from '../../actions/modal_actions';
 import { logout, login } from '../../actions/session_actions';
 import Greeting from './greeting';
 
-const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
+const mapStateToProps = (state) => ({
+  currentUser: state.ui.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -16,6 +16,7 @@ import SignupFormContainer from './session_form/signup_form_container.jsx';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProductIndexContainer from './product/product_index_container';
 import ProductShowContainer from './product/product_show_container';
+import ProductCreateContainer from './product/product_create_container';
 const App = () => (
   <div>
     <Modal />
@@ -25,7 +26,7 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={ProductIndexContainer}/>
       <Route exact path="/product/:id" component={ProductShowContainer}/>
-      <ProtectedRoute exact path="/product/new" />
+      <Route exact path="/products" component={ ProductCreateContainer }/>
       <Redirect to="/"/>
     </Switch>
   </div>
