@@ -16,14 +16,14 @@ export const createProduct = product => (
   $.ajax({
       method: "POST",
       url: 'api/products',
-      data: { product }
+      data: { product } 
   })
 );
 
 export const updateProduct = product => (
   $.ajax({
     method: "PATCH",
-    url: `api/product/${product.id}`,
+    url: `api/products/${product.id}`,
     data: { product }
   })
 );
@@ -31,6 +31,6 @@ export const updateProduct = product => (
 export const deleteProduct = id => (
   $.ajax({
     method: "DELETE",
-    url: `api/product/${id}`,
+    url: `api/products/${id}`,
   })
 );

@@ -48,7 +48,7 @@ export const fetchProduct = id => dispatch => (
 
 export const createProduct = product => dispatch => (
   APIUtil.createProduct(product).then(
-    product => dispatch(receiveProduct(product))
+    newProduct => dispatch(receiveProduct(newProduct))
   )
 );
 
