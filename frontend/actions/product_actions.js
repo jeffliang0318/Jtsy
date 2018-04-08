@@ -54,7 +54,7 @@ export const createProduct = product => dispatch => (
 
 export const updateProduct = product => dispatch => (
   APIUtil.updateProduct(product).then(
-    product => dispatch(receiveProduct(product))
+    newProduct => dispatch(receiveProduct(newProduct))
   )
 );
 

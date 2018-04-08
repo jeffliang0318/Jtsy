@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+import ProductDeleteContainer from './product_delete_container';
 
 class ProductShow extends React.Component {
   constructor(props){
@@ -28,6 +29,7 @@ class ProductShow extends React.Component {
               <span className="price">${product.price}</span>
             </div>
             <button>Add to Cart</button>
+            <ProductDeleteContainer id={this.props.match.params.id}/>
           </div>
         </div>
       </div>
@@ -36,4 +38,4 @@ class ProductShow extends React.Component {
 
 }
 
-export default withRouter(ProductShow);
+export default ProductShow;
