@@ -1,6 +1,7 @@
 @import "../base/globals";
 header {
-  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-bottom: 1px solid $light-grey;
 }
 
@@ -8,8 +9,8 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
 }
 .loogedIn-user {
   display: flex;
@@ -28,6 +29,10 @@ header div button {
   border: none;
   font-size: 3vh;
 }
+.left-nav {
+  display: flex;
+  align-items: center;
+}
 .session-form {
   padding: 30px;
 }
@@ -37,6 +42,8 @@ header div button {
 .header-link h1 {
   color: orange;
   font-size: 5vh;
+  font-family: serif;
+  font-weight: unset;
 }
 .header-group {
   display: flex;
@@ -89,11 +96,26 @@ header div button {
   font-size: 20px;
   border: none;
 }
-
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
 .login-signup button:hover {
   cursor: pointer;
 }
-
+.search-bar input {
+  height: 3.5vh;
+  width: 25vw;
+}
+.search-button {
+  height: 4vh;
+  width: 9vw;
+  border: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 100%;
+}
 .switchTab {
   background-color: #A9A9A9;
 }

@@ -4,9 +4,15 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
 
   const sessionLinks = () => (
     <nav className="nav-bar">
-      <Link to="/" className="header-link">
-        <h1>Jtsy</h1>
-      </Link>
+      <div className="left-nav">
+        <Link to="/" className="header-link">
+          <h1>Jtsy</h1>
+        </Link>
+        <div className="search-bar">
+          <input type="text"></input>
+          <button className="search-button">Search</button>
+        </div>
+      </div>
       <div className="login-signup">
         <Link className="sell-link" to='/products/new'>
           Sell on Jtsy
@@ -23,9 +29,15 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
   );
   const personalGreeting = () => (
       <nav className="nav-bar">
-        <Link to="/" className="header-link">
-          <h1>Jtsy</h1>
-        </Link>
+        <div className="left-nav">
+          <Link to="/" className="header-link">
+            <h1>Jtsy</h1>
+          </Link>
+          <div className="search-bar">
+            <input type="text"></input>
+            <button className="search-button">Search</button>
+          </div>
+        </div>
         <div className="loogedIn-user">
           <Link className="sell-link" to='/products/new'>
             Sell on Jtsy
