@@ -10,6 +10,7 @@ class RegisterForm extends React.Component {
       name: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   update(field) {
@@ -28,6 +29,9 @@ class RegisterForm extends React.Component {
       this.props.closeModal();
       this.props.history.push('/');
     });
+  }
+  handleDemo(){
+    this.props.closeModal();
   }
 
   renderErrors() {
@@ -83,6 +87,13 @@ class RegisterForm extends React.Component {
               value={this.props.formType}/>
           </div>
         </form>
+        <button
+          onClick={() => {
+            this.props.login({email: "user@user.com", password: "123456"});
+            this.handleDemo();
+            }
+          }>
+            DEMO</button>
       </div>
       </div>
     );

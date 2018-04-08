@@ -8,7 +8,7 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
         <h1>Jtsy</h1>
       </Link>
       <div className="login-signup">
-        <Link className="sell-link" to='/products'>
+        <Link className="sell-link" to='/products/new'>
           Sell on Jtsy
         </Link>
         <button
@@ -27,7 +27,7 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
           <h1>Jtsy</h1>
         </Link>
         <div className="loogedIn-user">
-          <Link className="sell-link" to='/products'>
+          <Link className="sell-link" to='/products/new'>
             Sell on Jtsy
           </Link>
           <h2 className="header-name">Hi, {currentUser.name}!</h2>

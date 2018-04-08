@@ -25,7 +25,6 @@ class productForm extends React.Component {
   }
   componentDidMount(){
     if (!this.props.loggedIn) {
-      // this.props.histroy.push("/");
       this.props.openModal('login');
     }
   }

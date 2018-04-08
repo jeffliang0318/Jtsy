@@ -11,8 +11,11 @@ class SessionForm extends React.Component {
       name: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
-
+  handleDemo(){
+    this.props.closeModal();
+  }
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -29,6 +32,9 @@ class SessionForm extends React.Component {
     this.props.closeModal();
     this.props.history.push('/');
   });
+  }
+  handleDemo(){
+    this.props.closeModal();
   }
 
   renderErrors() {
@@ -78,6 +84,13 @@ class SessionForm extends React.Component {
                 value={this.props.formType}/>
             </div>
           </form>
+          <button
+            onClick={() => {
+              this.props.login({email: "user@user.com", password: "123456"});
+              this.handleDemo();
+              }
+            }>
+              DEMO</button>
         </section>
         </div>
       </div>
