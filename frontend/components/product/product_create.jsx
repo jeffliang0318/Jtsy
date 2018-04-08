@@ -42,8 +42,8 @@ class productForm extends React.Component {
       if (key === "uploadedFile") continue;
       product[key]=this.state[key];
     }
-    this.props.productForm(product).then( () =>
-      this.props.history.push('/')
+    this.props.productForm(product).then( createdProduct =>
+      this.props.history.push(`/product/${createdProduct.user_id}`)
     );
   }
   onImageDrop(files) {
