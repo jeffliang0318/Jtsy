@@ -11,11 +11,16 @@ import {
 class ProductShow extends React.Component {
   constructor(props){
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount(){
     this.props.fetchProduct(this.props.match.params.id);
   }
-
+  handleDelete(e){
+    e.preventDefault();
+    this.props.removeProduct(this.props.product.id).then(() =>
+    this.props.history.push('/'));
+  }
   render(){
     return(
       (!this.props.product) ?
@@ -37,7 +42,9 @@ class ProductShow extends React.Component {
             </div>
             <button>Add to Cart</button>
             <ProductDeleteContainer userId={this.props.product.user_id}
-              productId={this.props.product.id}/>
+              productId={this.props.product.id}
+              handleDelete={this.handleDelete}
+              />
             {(this.props.product.user_id)}
             {(this.props.product.id)}
             {Object.keys(this.props)}

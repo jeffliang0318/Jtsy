@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { createProduct, clearError } from '../../actions/product_actions';
+import { createProduct, clearError, fetchProducts } from '../../actions/product_actions';
 import { openModal } from '../../actions/modal_actions';
 import ProductCreate from "./product_create";
 
@@ -16,6 +16,7 @@ const mapDispatchToProps = dispatch => {
     productForm: product => dispatch(createProduct(product)),
     clearError: () => dispatch(clearError()),
     openModal: modal => dispatch(openModal(modal)),
+    fetchProducts: () => dispatch(fetchProducts())
   };
 };
 

@@ -17,7 +17,8 @@ class productForm extends React.Component {
       title: "",
       description: "",
       quantity: 1,
-      price: 0
+      price: 0,
+      redirectToNewPage: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleImageUpload = this.handleImageUpload.bind(this);
@@ -39,12 +40,13 @@ class productForm extends React.Component {
     e.preventDefault();
     let product = {};
     for (let key in this.state) {
-      if (key === "uploadedFile") continue;
+      if ((key === "uploadedFile") || key === "redirectToNewPage") continue;
       product[key]=this.state[key];
     }
-    this.props.productForm(product).then( createdProduct =>
-      this.props.history.push(`/product/${createdProduct.user_id}`)
-    );
+    this.props.productForm(product).then(() => {
+      this.props.fetchProducts();
+      this.setState({ redirectToNewPage: true });
+    });
   }
   onImageDrop(files) {
     this.setState({
@@ -81,6 +83,12 @@ class productForm extends React.Component {
     );
   }
   render() {
+    if (this.state.redirectToNewPage) {
+      const showId = Object.values(this.props.currentUser.products).slice(-1)[0].id;
+     return (
+     <Redirect to={`/product/${showId}`}/>
+     );
+   } else {
     return(
       <div className='product-create-container'>
         <form onSubmit={this.handleSubmit} className="product-form-box" >
@@ -160,7 +168,7 @@ class productForm extends React.Component {
       </div>
     );
   }
-
+  }
 }
 
 export default withRouter(productForm);
