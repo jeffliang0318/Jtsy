@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { createProduct, clearError, fetchProducts } from '../../actions/product_actions';
+import { createProduct, clearError, fetchProducts
+} from '../../actions/product_actions';
 import { openModal } from '../../actions/modal_actions';
+import { fetchUser } from '../../actions/session_actions';
 import ProductCreate from "./product_create";
 
 const mapStateToProps = (state) => ({
@@ -16,7 +18,8 @@ const mapDispatchToProps = dispatch => {
     productForm: product => dispatch(createProduct(product)),
     clearError: () => dispatch(clearError()),
     openModal: modal => dispatch(openModal(modal)),
-    fetchProducts: () => dispatch(fetchProducts())
+    fetchProducts: () => dispatch(fetchProducts()),
+    fetchUser: (id) => dispatch(fetchUser(id))
   };
 };
 

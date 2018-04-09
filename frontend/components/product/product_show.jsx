@@ -11,15 +11,20 @@ import {
 class ProductShow extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      redirectToNewPage: false
+    };
     this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount(){
     this.props.fetchProduct(this.props.match.params.id);
   }
+
   handleDelete(e){
     e.preventDefault();
-    this.props.removeProduct(this.props.product.id).then(() =>
-    this.props.history.push('/'));
+    this.props.removeProduct(this.props.product.id).then(
+      this.props.history.push('/')
+    );
   }
   render(){
     return(
@@ -54,7 +59,6 @@ class ProductShow extends React.Component {
     )
   );
 }
-
 }
 
 export default ProductShow;
