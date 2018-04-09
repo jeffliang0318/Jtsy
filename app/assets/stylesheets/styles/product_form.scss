@@ -1,0 +1,49 @@
+.product-form-box > div{
+  border: 1px solid grey;
+  padding: 10px;
+  margin: 10px;
+}
+
+.instruction-detail {
+  display: flex;
+  justify-content: space-between;
+}
+.upload-photo-section {
+  display: flex;
+}
+.uploadedFile {
+  height: 200px;
+  width: auto;
+}
+
+.add-photo {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2vh;
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+  width: 96%;
+  border-left: 0px;
+  border-right: 0px;
+  order: 30;
+
+  .cancel-link {
+    text-decoration: none;
+    border: 1px solid grey;
+    padding: 6px;
+    border-radius: 5px;
+  }
+  .product-submit {
+    color: white;
+    background-color: orange;
+    font-size: 2vh;
+    border-radius: 5px;
+    padding: 6px;
+  }
+}

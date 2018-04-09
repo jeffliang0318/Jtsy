@@ -92,25 +92,26 @@ class productForm extends React.Component {
                   see every detail</span>
               </div>
               <div className='instruction-detail'>
-                <span>Photos *</span>
-                <span>Use up to ten photos to show your items most
-                  important qualities</span>
+                <div className="upload-description">
+                  <span>Photos *</span>
+                  <span>Use up to ten photos to show your items most
+                    important qualities</span>
+                </div>
+                <div className='upload-photo-section'>
+                  <Dropzone
+                    multiple={false}
+                    accept="image/*"
+                    onDrop={this.onImageDrop.bind(this)}>
+                    <p className="add-photo">Drop an image or click to select a file to upload.</p>
+                  </Dropzone>
+                  <div className="uploaded-photo">
+                    {this.state.img_url === '' ? <div className="empty-box"></div> :
+                      <div>
+                        <img className="uploadedFile" src={this.state.img_url} />
+                      </div>}
+                    </div>
+                </div>
               </div>
-            </div>
-            <div className='upload-photo-section'>
-              <Dropzone
-                multiple={false}
-                accept="image/*"
-                onDrop={this.onImageDrop.bind(this)}>
-                <p>Drop an image or click to select a file to upload.</p>
-              </Dropzone>
-            </div>
-            <div className="uploaded-photo">
-              {this.state.img_url === '' ? null :
-              <div>
-                <p>{this.state.uploadedFile.name}</p>
-                <img className="uploadedFile" src={this.state.img_url} />
-              </div>}
             </div>
           </div>
           <div className='listing-details-instruction'>
@@ -151,6 +152,7 @@ class productForm extends React.Component {
             </div>
           </div>
           <div className="submit-button">
+            <Link className="cancel-link"to="/">Cancel</Link>
             <input className="product-submit" type="submit"
               value={this.props.formType}/>
           </div>

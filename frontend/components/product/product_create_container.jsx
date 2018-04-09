@@ -6,7 +6,7 @@ import ProductCreate from "./product_create";
 
 const mapStateToProps = (state) => ({
   errors: state.errors.product,
-  formType: "Create product for sell",
+  formType: "Save and continue",
   loggedIn: Boolean(state.ui.session.currentUser),
   currentUser: state.ui.session.currentUser
 });
