@@ -11,9 +11,6 @@ import {
 class ProductShow extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      redirectToNewPage: false
-    };
     this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount(){
@@ -50,9 +47,8 @@ class ProductShow extends React.Component {
               productId={this.props.product.id}
               handleDelete={this.handleDelete}
               />
-            {(this.props.product.user_id)}
             {(this.props.product.id)}
-            {Object.keys(this.props)}
+            {(this.props.product.user_id)}
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 
 .sell-item img {
-  min-width: 180px;
-  width: 100%;
+width: 15vw;
 }
 .sell-item li {
   display: flex;
@@ -10,7 +9,7 @@
 
 .user-sell-products ul {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
 }
 .products-and-carts {
   display: flex;

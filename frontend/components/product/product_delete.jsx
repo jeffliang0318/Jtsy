@@ -1,6 +1,6 @@
 import { fetchProduct, deleteProduct } from '../../actions/product_actions';
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class ProductDelete extends React.Component {
   render(){
@@ -9,7 +9,7 @@ class ProductDelete extends React.Component {
         <div>
           <button onClick={ this.props.handleDelete }>
             Delete Product</button>
-          <h3>productId{this.props.productId}</h3>
+          <Link to={`/products/${this.props.productId}/edit`}>Update item</Link>
         </div>
       );
     } else {

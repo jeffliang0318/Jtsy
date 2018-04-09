@@ -17,6 +17,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProductIndexContainer from './product/product_index_container';
 import ProductShowContainer from './product/product_show_container';
 import ProductCreateContainer from './product/product_create_container';
+import ProductEditContainer from './product/product_edit_container';
 import UserShowContainer from './user/user_show_container';
 const App = () => (
   <div>
@@ -29,6 +30,8 @@ const App = () => (
       <Route exact path="/product/:id" component={ProductShowContainer}/>
       <ProtectedRoute exact path="/products/new"
         component={ ProductCreateContainer }/>
+      <ProtectedRoute exact path="/products/:id/edit"
+          component={ ProductEditContainer }/>
       <Route exact path="/users/:id" component={UserShowContainer}/>
       <Redirect to="/"/>
     </Switch>

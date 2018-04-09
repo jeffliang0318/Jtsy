@@ -2,7 +2,8 @@ class Api::ProductsController < ApplicationController
   before_action :require_logged_in, only: [:create, :edit, :destroy]
 
     def index
-      @products = Product.all
+      all_products = Product.all.shuffle
+      @products = all_products[0..10]
       render :index
     end
 
@@ -16,6 +17,18 @@ class Api::ProductsController < ApplicationController
         render "api/products/show"
       else
         render json: @user.errors.full_messages, status: 422
+      end
+    end
+
+    def update
+      @product = Product.find(params[:id])
+      if @product
+        @product = Product.new(product_params)
+        if @product.save
+          render "api/products/show"
+        else
+          render json: @user.errors.full_messages, status: 422
+        end
       end
     end
 

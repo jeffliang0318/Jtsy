@@ -24,6 +24,7 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
         <button onClick={() => openModal('login')}>Login</button>
         &nbsp;  &nbsp;
         <button onClick={() => openModal('signup')}>Register</button>
+        <i className="fa fa-shopping-cart" aria-hidden="true"></i>
       </div>
     </nav>
   );
@@ -43,9 +44,16 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
             Sell on Jtsy
           </Link>
           <Link to={`/users/${currentUser.id}`}>
-            <h2 className="header-name">Hi, {currentUser.name}!</h2>
+            <div className="user-icon">
+              <i className="fa fa-user-circle" aria-hidden="true"></i>
+              <span>You</span>
+            </div>
           </Link>
           <button className="header-button" onClick={logout}>Log Out</button>
+          <div className="cart-icon">
+            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+            <span>Cart</span>
+          </div>
         </div>
       </nav>
   );
