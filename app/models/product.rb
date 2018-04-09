@@ -5,7 +5,9 @@ class Product < ApplicationRecord
 
   validates :price, numericality: { greater_than: 0 }
 
-  belongs_to :user
+  belongs_to :user,
+  foreign_key: "user_id",
+  class_name: "User"
 
   after_initialize :default_quantity
 
