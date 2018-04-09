@@ -34,12 +34,16 @@ class UserShow extends React.Component {
           <h1>Hi, {this.props.user.name}</h1>
           <h2>email: {this.props.user.email}</h2>
         </div>
-        <div className="user-sell-products">
-          <ul>
-            { productItems }
-          </ul>
-        </div>
-        <div className="cart">
+        <div className="products-and-carts">
+          <div className="user-sell-products">
+            <h3>Your Products</h3>
+            <ul>
+              { productItems }
+            </ul>
+          </div>
+          <div className="cart">
+            <h3>Your shopping cart</h3>
+          </div>
         </div>
       </div>
     );

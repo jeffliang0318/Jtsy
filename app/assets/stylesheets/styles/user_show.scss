@@ -1,6 +1,7 @@
 
 .sell-item img {
-  width: 15vw;
+  min-width: 180px;
+  width: 100%;
 }
 .sell-item li {
   display: flex;
@@ -9,4 +10,27 @@
 
 .user-sell-products ul {
   display: flex;
+  justify-content: center;
+}
+.products-and-carts {
+  display: flex;
+  justify-content: space-around;
+
+}
+.products-and-carts > div {
+  padding:10px;
+}
+.user-sell-products {
+  border: 1px solid grey;
+  width: 48vw;
+  display: flex;
+  flex-direction: column;
+}
+.cart {
+  border: 1px solid grey;
+  width: 40vw;
+}
+
+.user-detail {
+  padding: 3vw;
 }
