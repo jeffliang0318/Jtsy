@@ -42,7 +42,9 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
           <Link className="sell-link" to='/products/new'>
             Sell on Jtsy
           </Link>
-          <h2 className="header-name">Hi, {currentUser.name}!</h2>
+          <Link to={`/users/${currentUser.id}`}>
+            <h2 className="header-name">Hi, {currentUser.name}!</h2>
+          </Link>
           <button className="header-button" onClick={logout}>Log Out</button>
         </div>
       </nav>

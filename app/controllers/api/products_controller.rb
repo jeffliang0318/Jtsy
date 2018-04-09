@@ -22,6 +22,7 @@ class Api::ProductsController < ApplicationController
     def destroy
       @product = Product.find(params[:id])
       @product.destroy
+      render "api/products/show"
     end
 
     private
