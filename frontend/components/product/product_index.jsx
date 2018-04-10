@@ -7,7 +7,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
-
+import SimpleSlider from "../slideshow/simpleslider";
 class ProductIndex extends React.Component {
 
   componentDidMount(){
@@ -23,7 +23,7 @@ class ProductIndex extends React.Component {
       });
 
     return (
-    <div className='main'>
+    <div >
       <div className="category-bar">
         <Link to="">Automation Components</Link>
         <Link to="" >Fasteners</Link>
@@ -32,16 +32,16 @@ class ProductIndex extends React.Component {
         <Link to="">Processing Tools</Link>
         <Link to="">Electrical Components</Link>
       </div>
-      <div className="index-img">
-        <img src="http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523339264/600px-Application_field_automotive.jpg"/>
-      </div>
-      <div>
-        <strong className="slogan">Want to reduce downtime cost? Start from here!</strong>
-      </div>
-      <div className='product-index'>
-        <ul className='product-index-items'>
-          {products}
-        </ul>
+        <SimpleSlider/ >
+      <div className='main'>
+        <div >
+          <strong className="slogan">Want to reduce downtime cost? Start from here!</strong>
+        </div>
+        <div className='product-index'>
+          <ul className='product-index-items'>
+            {products}
+          </ul>
+        </div>
       </div>
     </div>
     );
