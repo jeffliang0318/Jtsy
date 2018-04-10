@@ -1,4 +1,13 @@
 class Api::ShoppingCartItemsController < ApplicationController
+  def index
+    @items = ShoppingCartItem.all
+    render :index
+  end
+
+  def show
+    @item = ShoppingCartItem.find(param[:id])
+  end
+
   def create
     @item = ShoppingCartItem.new(cart_item_params)
     if @item.save

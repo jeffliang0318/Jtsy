@@ -11,7 +11,41 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.index-img {
+padding: 30px 0px 30px 0px;
+width: 60vw;
+}
+.item-title {
+  color: grey;
+}
+.item-price{
+  color: black;
+  font-weight: bolder;
+}
+.index-img img {
+  width: 100%;
+}
+.slogan {
+  font-size: 5vh;
+  font-weight: bolder;
+}
+.category-bar {
+  padding: 0px 10px 30px;
+    border-bottom: 1px solid #f4f4f5;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+.category-bar a{
+  text-decoration: none;
+  color: black;
 }
 .product-index-item a{
   display: inline-grid;
