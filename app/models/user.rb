@@ -7,10 +7,19 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   after_initialize :ensure_session_token
+  after_create :create_cart
   has_many :products,
   foreign_key: "user_id",
   class_name: "Product"
 
+  has_one :shopping_cart
+
+  has_many :shopping_cart_items,
+  through: :shopping_cart,
+  source: :shopping_cart_items
+  def create_cart
+    ShoppingCart.create!(user_id: self.id)
+  end
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil unless user

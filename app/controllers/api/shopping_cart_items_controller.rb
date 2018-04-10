@@ -1,11 +1,7 @@
 class Api::ShoppingCartItemsController < ApplicationController
   def index
-    @items = ShoppingCartItem.all
+    @items = current_user.shopping_cart_items
     render :index
-  end
-
-  def show
-    @item = ShoppingCartItem.find_by(user_id: params[:id])
   end
 
   def create
@@ -17,11 +13,16 @@ class Api::ShoppingCartItemsController < ApplicationController
     end
   end
 
+  def update
+    @item = ShoppingCartItem.find_by(user_id: params[:id])
+  end
+
   def destroy
     @item = ShoppingCartItem.find_by(user_id: params[:id])
     @item.destroy
-    render "api/shopping_cart_items/show"
+    render "api/shopping_cart_items"
   end
+
   def cart_item_params
     params.require(:shoppingCartItem).permit(
       :user_id, :product_id, :items

@@ -12,11 +12,17 @@ class ProductShow extends React.Component {
   constructor(props){
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleAddToCart = this.handleAddToCart.bind(this);
+    this.state = {
+      id: null,
+      items: []
+    };
   }
   componentDidMount(){
     this.props.fetchProduct(this.props.match.params.id);
     if (this.props.currentUser) {
-      this.props.fetchShoppingCart(this.props.currentUser.id);
+      this.props.fetchShoppingCart(this.props.currentUser.id)
+      .then( cart => this.setState(this.props.cart));
     }
   }
 
@@ -26,14 +32,15 @@ class ProductShow extends React.Component {
       this.props.history.push('/')
     );
   }
-  handelAddToCart(e) {
+  handleAddToCart(e) {
     e.preventDefault();
-
+    const productId = this.props.product.id;
+    this.setState({id: this.props.currentUser.id ,items: [productId]}, () =>
+    this.props.updateShoppingCart(this.state));
   }
   productDelete(){
     if (this.props.currentUser) {
       return (
-
         <ProductDeleteContainer userId={this.props.product.user_id}
           productId={this.props.product.id}
           handleDelete={this.handleDelete}
@@ -43,9 +50,11 @@ class ProductShow extends React.Component {
   }
   addToCart(){
     if (this.props.currentUser) {
-      return (
-        <button>Add to Cart</button>
-      );
+      if (this.props.currentUser.id !== this.props.product.user_id) {
+        return (
+          <button onClick={this.handleAddToCart}>Add to Cart</button>
+        );
+      }
     }
   }
   render(){
