@@ -2,8 +2,7 @@ class Api::ProductsController < ApplicationController
   before_action :require_logged_in, only: [:create, :edit, :destroy]
 
     def index
-      all_products = Product.all.shuffle
-      @products = all_products[0..10]
+      @products = Product.order("RANDOM()").first(10)
       render :index
     end
 

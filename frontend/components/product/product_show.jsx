@@ -23,6 +23,16 @@ class ProductShow extends React.Component {
       this.props.history.push('/')
     );
   }
+  productDelete(){
+    if (this.props.currentUser) {
+      return (
+        <ProductDeleteContainer userId={this.props.product.user_id}
+          productId={this.props.product.id}
+          handleDelete={this.handleDelete}
+          />
+      );
+    }
+  }
   render(){
     return(
       (!this.props.product) ?
@@ -43,10 +53,8 @@ class ProductShow extends React.Component {
               <span className="price">${this.props.product.price}</span>
             </div>
             <button>Add to Cart</button>
-            <ProductDeleteContainer userId={this.props.product.user_id}
-              productId={this.props.product.id}
-              handleDelete={this.handleDelete}
-              />
+            {this.productDelete()}
+
             {(this.props.product.id)}
             {(this.props.product.user_id)}
           </div>
