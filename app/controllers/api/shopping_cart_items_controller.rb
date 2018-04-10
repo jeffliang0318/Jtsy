@@ -5,7 +5,7 @@ class Api::ShoppingCartItemsController < ApplicationController
   end
 
   def show
-    @item = ShoppingCartItem.find(param[:id])
+    @item = ShoppingCartItem.find_by(user_id: params[:id])
   end
 
   def create
@@ -18,11 +18,13 @@ class Api::ShoppingCartItemsController < ApplicationController
   end
 
   def destroy
-
+    @item = ShoppingCartItem.find_by(user_id: params[:id])
+    @item.destroy
+    render "api/shopping_cart_items/show"
   end
   def cart_item_params
     params.require(:shoppingCartItem).permit(
-      :user_id, :product_id
+      :user_id, :product_id, :items
     )
   end
 end

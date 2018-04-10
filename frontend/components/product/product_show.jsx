@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import ProductDeleteContainer from './product_delete_container';
 import {
   Route,
@@ -15,6 +15,9 @@ class ProductShow extends React.Component {
   }
   componentDidMount(){
     this.props.fetchProduct(this.props.match.params.id);
+    if (this.props.currentUser) {
+      this.props.fetchShoppingCart(this.props.currentUser.id);
+    }
   }
 
   handleDelete(e){
@@ -23,13 +26,25 @@ class ProductShow extends React.Component {
       this.props.history.push('/')
     );
   }
+  handelAddToCart(e) {
+    e.preventDefault();
+
+  }
   productDelete(){
     if (this.props.currentUser) {
       return (
+
         <ProductDeleteContainer userId={this.props.product.user_id}
           productId={this.props.product.id}
           handleDelete={this.handleDelete}
           />
+      );
+    }
+  }
+  addToCart(){
+    if (this.props.currentUser) {
+      return (
+        <button>Add to Cart</button>
       );
     }
   }
@@ -52,9 +67,8 @@ class ProductShow extends React.Component {
               <span className="title">Title{this.props.product.title}</span>
               <span className="price">${this.props.product.price}</span>
             </div>
-            <button>Add to Cart</button>
-            {this.productDelete()}
-
+            { this.addToCart() }
+            { this.productDelete() }
             {(this.props.product.id)}
             {(this.props.product.user_id)}
           </div>
