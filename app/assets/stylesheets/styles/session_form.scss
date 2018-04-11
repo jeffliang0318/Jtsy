@@ -153,13 +153,17 @@ header div button {
   height: 3.5vh;
   width: 25vw;
 }
-.search-button {
-  height: 4vh;
+.search-bar button {
+  height: 4.2vh;
   width: 9vw;
   border: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   font-size: 100%;
+  border: 1px solid orange;
+  background: orange;
+  color: white;
+  order: 50;
 }
 .switchTab {
   background-color: #A9A9A9;

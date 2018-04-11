@@ -1,8 +1,14 @@
+.product-index{
+  display: flex;
+}
 .product-index a {
   text-decoration: none;
 }
+.product-index-items{
+  display: flex;
+  flex-wrap: wrap;
+}
 .product-index-items li {
-  float: left;
   width: 10vw;
   min-width: 150px;
   margin: 3px;
