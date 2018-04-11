@@ -5,7 +5,10 @@ import {
 } from '../actions/session_actions';
 
 const _nullUser = Object.freeze({
-  currentUser: null
+  currentUser: {
+    products: [],
+    shopping_cart_items: []
+  }
 });
 
 const sessionReducer = (state = _nullUser, action) => {
