@@ -32,7 +32,7 @@ const App = () => (
         component={ ProductCreateContainer }/>
       <ProtectedRoute exact path="/products/:id/edit"
           component={ ProductEditContainer }/>
-      <Route exact path="/users/:id" component={UserShowContainer}/>
+      <ProtectedRoute exact path="/users/:id" component={UserShowContainer}/>
       <Redirect to="/"/>
     </Switch>
   </div>

@@ -46,10 +46,12 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
           <Link className="sell-link" to='/products/new'>
             Sell on Jtsy
           </Link>
-          <div className="home-icon">
-            <i className="fa fa-home" aria-hidden="true"></i>
-            <span>Home</span>
-          </div>
+          <Link className="home-icon-link" to="/">
+            <div className="home-icon">
+              <i className="fa fa-home" aria-hidden="true"></i>
+              <span>Home</span>
+            </div>
+          </Link>
           <Link className="user-icon-link" to={`/users/${currentUser.id}`}>
             <div className="user-icon">
               <i className="fa fa-user-circle" aria-hidden="true"></i>

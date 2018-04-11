@@ -3,8 +3,8 @@
 }
 .product-index-items li {
   float: left;
-  width: 170px;
-  height: 200px;
+  width: 10vw;
+  min-width: 150px;
   margin: 3px;
 }
 .product-index-items li a {
