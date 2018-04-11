@@ -16,7 +16,8 @@ class ProductShow extends React.Component {
     this.state = {
       cart_id: null,
       product_id: null,
-      quantity: null
+      quantity: null,
+      totalPrice: null
     };
   }
   componentDidMount(){
@@ -37,7 +38,7 @@ class ProductShow extends React.Component {
       e.preventDefault();
       const productId = this.props.product.id;
       this.setState({cart_id: this.props.currentUser.shopping_cart.id ,
-        product_id: this.props.product.id, quantity: 5 }, () =>
+        product_id: this.props.product.id, quantity: 1, price: this.props.price }, () =>
         this.props.createShoppingCartItem(this.state));
     }
   }

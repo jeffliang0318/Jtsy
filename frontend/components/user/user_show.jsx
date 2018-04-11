@@ -13,7 +13,13 @@ class UserShow extends React.Component {
     this.props.fetchUser(this.props.user.id);
     this.props.fetchShoppingCartItems();
   }
-
+  totalPrice(){
+    let total = 0;
+    this.props.priceItem.forEach(function(item) {
+      total += item.quantity * item.price;
+    });
+    return total;
+  }
   render(){
     const productItems = this.props.products.map(product =>
       <div key={product.id}>
@@ -53,14 +59,14 @@ class UserShow extends React.Component {
         </div>
         <div className="products-and-carts">
           <div className="user-sell-products">
-            <h3>Your Products</h3>
-            <ul>
+            <h3>Products for sell</h3>
+            <ul className="products-for-sell">
               { productItems }
             </ul>
           </div>
           <div className="cart">
-            <h3>Your shopping cart</h3>
-            <ul>
+            <h3>Shopping cart items</h3>
+            <ul className="cart-items">
               { cartItems }
             </ul>
           </div>
