@@ -15,7 +15,23 @@
   height: 200px;
   width: auto;
 }
+.plz-login-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  margin: auto;
+  top: 30px;
+}
 
+.plz-login-img strong{
+  font-size: 45px;
+}
+
+.plz-login-img img {
+  width: 100%;
+  margin-bottom: 10vh;
+}
 .add-photo {
   text-align: center;
   vertical-align: middle;

@@ -19,7 +19,12 @@ const Protected = ({ component: Component, path, loggedIn, exact, redirectModal 
       return <Component {...props} />;
     } else {
       redirectModal("login");
-        return null;
+        return (
+          <div className="plz-login-img">
+            <img src="http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523430004/800px-Gear-kegelzahnrad.svg.png"></img>
+            <strong>Please Register Or Log In as DEMO User</strong>
+        </div>
+        );
     }
     }
   } />

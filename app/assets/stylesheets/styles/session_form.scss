@@ -23,11 +23,11 @@ header nav {
   color: orange;
 }
 header div button {
-  color: white;
-  background-color: orange;
+  color: orange;
+  background-color: white;
   border-radius: 5px;
   border: none;
-  font-size: 3vh;
+  font-size: 2vh;
 }
 .left-nav {
   display: flex;
@@ -50,9 +50,11 @@ header div button {
 }
 
 .header-button {
-  margin-left: 20px;
+  margin-left: 10px;
 }
-
+.sign-in-button {
+  border: 1px solid orange;
+}
 .modal-background {
   position: fixed;
   top: 0;
@@ -103,6 +105,45 @@ header div button {
 }
 .login-signup button:hover {
   cursor: pointer;
+}
+.login-signup {
+  display:flex;
+  align-items: center;
+}
+.login-signup button {
+  margin-right: 10px;
+}
+.header-button {
+  margin-right: 10px;
+
+}
+.cart-icon {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid $grey;
+  padding-left: 10px;
+  align-items: center;
+}
+.home-icon {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid $grey;
+  border-right: 1px solid $grey;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: center;
+}
+.user-icon {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid $grey;
+  padding-left: 12px;
+  padding-right: 12px;
+  align-items: center;
+}
+.user-icon-link {
+  text-decoration: none;
+  color: grey;
 }
 .search-bar input {
   height: 3.5vh;

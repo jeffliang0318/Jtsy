@@ -17,14 +17,17 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
         <Link className="sell-link" to='/products/new'>
           Sell on Jtsy
         </Link>
+        <button onClick={() => openModal('signup')}>Register</button>
+        &nbsp;  &nbsp;
         <button
           onClick={() => login({email: "user@user.com", password: "123456"})}>
           DEMO</button>
         &nbsp;  &nbsp;
-        <button onClick={() => openModal('login')}>Login</button>
-        &nbsp;  &nbsp;
-        <button onClick={() => openModal('signup')}>Register</button>
-        <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+        <button className="sign-in-button" onClick={() => openModal('login')}>Sign in</button>
+        <div className="cart-icon">
+          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+          <span>Cart</span>
+        </div>
       </div>
     </nav>
   );
@@ -43,7 +46,11 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
           <Link className="sell-link" to='/products/new'>
             Sell on Jtsy
           </Link>
-          <Link to={`/users/${currentUser.id}`}>
+          <div className="home-icon">
+            <i className="fa fa-home" aria-hidden="true"></i>
+            <span>Home</span>
+          </div>
+          <Link className="user-icon-link" to={`/users/${currentUser.id}`}>
             <div className="user-icon">
               <i className="fa fa-user-circle" aria-hidden="true"></i>
               <span>You</span>
