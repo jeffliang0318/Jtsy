@@ -9,6 +9,9 @@ import {
 } from 'react-router-dom';
 
 class UserShow extends React.Component {
+  constructor(props){
+    super(props);
+  }
   componentDidMount(){
     this.props.fetchUser(this.props.user.id);
     this.props.fetchShoppingCartItems();
@@ -20,6 +23,30 @@ class UserShow extends React.Component {
     });
     return total;
   }
+
+  cart() {
+    if (!this.props.cartItems) {
+      return null;
+    } else {
+      return(
+        this.props.cartItems.map(item =>
+          <div key={item.id}>
+            <Link to={`/product/${item.id}`}
+              className="sell-item">
+              <li>
+                <img src={item.img_url}>
+                </img>
+                <span>
+                  {item.title}
+                </span>
+              </li>
+            </Link>
+          </div>
+        )
+      );
+    }
+  }
+
   render(){
     const productItems = this.props.products.map(product =>
       <div key={product.id}>
@@ -30,21 +57,6 @@ class UserShow extends React.Component {
             </img>
             <span>
               {product.title}
-            </span>
-          </li>
-        </Link>
-      </div>
-    );
-
-    const cartItems = this.props.cartItems.map(item =>
-      <div key={item.id}>
-        <Link to={`/product/${item.id}`}
-          className="sell-item">
-          <li>
-            <img src={item.img_url}>
-            </img>
-            <span>
-              {item.title}
             </span>
           </li>
         </Link>
@@ -67,7 +79,7 @@ class UserShow extends React.Component {
           <div className="cart">
             <h3>Shopping cart items</h3>
             <ul className="cart-items">
-              { cartItems }
+              { this.cart() }
             </ul>
           </div>
         </div>
