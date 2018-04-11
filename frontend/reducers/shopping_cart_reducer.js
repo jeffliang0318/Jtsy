@@ -7,9 +7,13 @@ import { RECEIVE_ALL_CART_ITEMS, RECEIVE_CART_ITEM, DELETE_CART_ITEM} from
     Object.freeze(oldState);
     switch (action.type) {
       case RECEIVE_ALL_CART_ITEMS:
-        return action.items.cart;
+        return action.items.products;
       case RECEIVE_CART_ITEM:
         return merge({},oldState, {[action.item.product_id]: action.item});
+      case DELETE_CART_ITEM:
+        let newState = merge({}, oldState);
+        delete newState[action.id];
+        return  newState;
       default:
         return oldState;
 

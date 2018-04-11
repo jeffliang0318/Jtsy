@@ -11,6 +11,7 @@ import {
 class UserShow extends React.Component {
   componentDidMount(){
     this.props.fetchUser(this.props.user.id);
+    this.props.fetchShoppingCartItems();
   }
 
   render(){
@@ -28,6 +29,22 @@ class UserShow extends React.Component {
         </Link>
       </div>
     );
+
+    const cartItems = this.props.cartItems.map(item =>
+      <div key={item.id}>
+        <Link to={`/product/${item.id}`}
+          className="sell-item">
+          <li>
+            <img src={item.img_url}>
+            </img>
+            <span>
+              {item.title}
+            </span>
+          </li>
+        </Link>
+      </div>
+    );
+
     return(
       <div className="user-info">
         <div className="user-detail">
@@ -43,6 +60,9 @@ class UserShow extends React.Component {
           </div>
           <div className="cart">
             <h3>Your shopping cart</h3>
+            <ul>
+              { cartItems }
+            </ul>
           </div>
         </div>
       </div>

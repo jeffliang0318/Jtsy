@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => ({
   product: state.entities.product[ownProps.match.params.id],
   currentUser: state.ui.session.currentUser,
   cart: state.entities.shoppingCart,
-  shoppingCart: state.ui.session.currentUser.shopping_cart
 });
 
 const mapDispatchToProps = dispatch => ({

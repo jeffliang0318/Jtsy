@@ -33,11 +33,13 @@ class ProductShow extends React.Component {
     );
   }
   handleAddToCart(e) {
-    e.preventDefault();
-    const productId = this.props.product.id;
-    this.setState({cart_id: this.props.shoppingCart.id ,
-      product_id: this.props.product.id, quantity: 5 }, () =>
-    this.props.createShoppingCartItem(this.state));
+    if (this.props.currentUser) {
+      e.preventDefault();
+      const productId = this.props.product.id;
+      this.setState({cart_id: this.props.currentUser.shopping_cart.id ,
+        product_id: this.props.product.id, quantity: 5 }, () =>
+        this.props.createShoppingCartItem(this.state));
+    }
   }
   productDelete(){
     if (this.props.currentUser) {
