@@ -35,7 +35,7 @@ class ProductIndex extends React.Component {
         <SimpleSlider/ >
       <div className='main'>
         <div >
-          <strong className="slogan">Want to reduce downtime cost? Start from here!</strong>
+          <strong className="slogan">Want to reduce downtime cost? Start here!</strong>
         </div>
         <div className='product-index'>
           <ul className='product-index-items'>

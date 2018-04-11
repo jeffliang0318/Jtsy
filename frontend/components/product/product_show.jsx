@@ -14,15 +14,15 @@ class ProductShow extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.state = {
-      id: null,
-      items: []
+      cart_id: null,
+      product_id: null,
+      quantity: null
     };
   }
   componentDidMount(){
     this.props.fetchProduct(this.props.match.params.id);
     if (this.props.currentUser) {
-      this.props.fetchShoppingCart(this.props.currentUser.id)
-      .then( cart => this.setState(this.props.cart));
+      this.props.fetchShoppingCartItems();
     }
   }
 
@@ -35,8 +35,9 @@ class ProductShow extends React.Component {
   handleAddToCart(e) {
     e.preventDefault();
     const productId = this.props.product.id;
-    this.setState({id: this.props.currentUser.id ,items: [productId]}, () =>
-    this.props.updateShoppingCart(this.state));
+    this.setState({cart_id: this.props.shoppingCart.id ,
+      product_id: this.props.product.id, quantity: 5 }, () =>
+    this.props.createShoppingCartItem(this.state));
   }
   productDelete(){
     if (this.props.currentUser) {

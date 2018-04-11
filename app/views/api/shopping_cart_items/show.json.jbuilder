@@ -1,2 +1,2 @@
 
-  json.extract! @item, :items
+  json.extract! @item, :product_id, :quantity, :id

@@ -1,14 +1,15 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_CART, RECEIVE_ALL_CARTS } from '../actions/shopping_cart_item_actions';
+import { RECEIVE_ALL_CART_ITEMS, RECEIVE_CART_ITEM, DELETE_CART_ITEM} from
+'../actions/shopping_cart_item_actions';
 
-  const shoppingCartReducer = (oldState = [], action) => {
+  const shoppingCartReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     switch (action.type) {
-      case RECEIVE_ALL_CARTS:
-        return action.carts;
-      case RECEIVE_CART:
-        return action.cart;
+      case RECEIVE_ALL_CART_ITEMS:
+        return action.items.cart;
+      case RECEIVE_CART_ITEM:
+        return merge({},oldState, {[action.item.product_id]: action.item});
       default:
         return oldState;
 
