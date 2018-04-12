@@ -20,6 +20,7 @@ import ProductCreateContainer from './product/product_create_container';
 import ProductEditContainer from './product/product_edit_container';
 import UserShowContainer from './user/user_show_container';
 import SearchContainer from './search/search_container';
+import CartContainer from './cart/cart_container';
 const App = () => (
   <div>
     <Modal />
@@ -33,6 +34,7 @@ const App = () => (
         component={ ProductCreateContainer }/>
       <ProtectedRoute exact path="/products/:id/edit"
           component={ ProductEditContainer }/>
+        <Route exact path="/users/:id/cart" component={ CartContainer }/ >
       <ProtectedRoute exact path="/users/:id" component={UserShowContainer}/>
       <Redirect to="/"/>
     </Switch>

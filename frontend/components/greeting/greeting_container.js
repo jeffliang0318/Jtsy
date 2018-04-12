@@ -5,7 +5,9 @@ import Greeting from './greeting';
 
 const mapStateToProps = (state) => ({
   currentUser: state.ui.session.currentUser,
-  titles: Object.values(state.entities.product).map(product => product.title)
+  titles: Object.values(state.entities.product).map(product => product.title),
+  productId: Object.values(state.entities.product).map(product => product.id),
+  product: state.entities.product
 });
 
 const mapDispatchToProps = dispatch => ({

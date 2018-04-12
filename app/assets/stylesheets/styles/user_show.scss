@@ -8,9 +8,9 @@ height: 100%;
   flex-direction: column;
 }
 
-.user-sell-products ul {
+.products-for-sell{
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 .products-and-carts {
   display: flex;
@@ -40,20 +40,41 @@ height: 100%;
   padding: 3vw;
 }
 .products-for-sell div {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 5px;
   width: 12vw;
   height: 10vh;
   min-width: 150px;
-  min-height: 200px;
+  min-height: 225px;
   margin: 13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sell-item {
+  text-decoration: none;
+  color: black;
+  width: 50%;
 }
 .cart-items {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
-.cart-items div {
-  width: 12vw;
+.price-info h3{
+  font-size: 5vh;
+}
+.price-info strong{
+  font-size: 3vh;
+}
+.cart-items > div {
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 5px;
+  width: 35vw;
   height: 10vh;
   min-width: 150px;
   min-height: 200px;
   margin: 13px;
+  display: flex;
 }

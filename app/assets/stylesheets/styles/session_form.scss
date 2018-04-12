@@ -175,3 +175,15 @@ header div button {
   padding-bottom: 7px;
   background-color: white;
 }
+.auto {
+  position: relative;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: run-in;
+}
+.auto ul {
+  position: absolute;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchContainer from '../search/search';
 
-const Greeting = ({ currentUser, logout, openModal, login, titles }) => {
+const Greeting = ({ currentUser, logout, openModal, login, titles, productId }) => {
 
   const sessionLinks = () => (
     <nav className="nav-bar">
@@ -11,7 +11,7 @@ const Greeting = ({ currentUser, logout, openModal, login, titles }) => {
           <h1>Jtsy</h1>
         </Link>
         <div className="search-bar">
-          <SearchContainer titles={titles}/>
+          <SearchContainer titles={titles} productId={productId}/>
         </div>
       </div>
       <div className="login-signup">
@@ -25,10 +25,6 @@ const Greeting = ({ currentUser, logout, openModal, login, titles }) => {
           DEMO</button>
         &nbsp;  &nbsp;
         <button className="sign-in-button" onClick={() => openModal('login')}>Sign in</button>
-        <div className="cart-icon">
-          <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-          <span>Cart</span>
-        </div>
       </div>
     </nav>
   );
@@ -40,7 +36,7 @@ const Greeting = ({ currentUser, logout, openModal, login, titles }) => {
             <h1>Jtsy</h1>
           </Link>
           <div className="search-bar">
-            <SearchContainer titles={titles}/>
+            <SearchContainer titles={titles} productId={productId}/>
           </div>
         </div>
         <div className="loogedIn-user">
@@ -61,8 +57,10 @@ const Greeting = ({ currentUser, logout, openModal, login, titles }) => {
           </Link>
           <button className="header-button" onClick={ () => logout() }>Log Out</button>
           <div className="cart-icon">
+            <Link to={`/users/${currentUser.id}/cart`}>
             <i className="fa fa-shopping-cart" aria-hidden="true"></i>
             <span>Cart</span>
+            </Link>
           </div>
         </div>
       </nav>
