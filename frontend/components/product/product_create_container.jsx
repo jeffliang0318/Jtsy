@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
   errors: state.errors.product,
   formType: "Save and continue",
   loggedIn: Boolean(state.ui.session.currentUser),
-  currentUser: state.ui.session.currentUser
+  currentUser: state.ui.session.currentUser.user
 });
 
 const mapDispatchToProps = dispatch => {

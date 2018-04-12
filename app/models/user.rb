@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
   after_create :create_cart
+
   has_many :products,
   foreign_key: "user_id",
   class_name: "Product"
@@ -17,6 +18,7 @@ class User < ApplicationRecord
   has_many :shopping_cart_items,
   through: :shopping_cart,
   source: :shopping_cart_items
+
   def create_cart
     ShoppingCart.create!(user_id: self.id)
   end
@@ -57,6 +59,10 @@ class User < ApplicationRecord
       self.session_token = new_session_token
     end
     self.session_token
+  end
+
+  def calculate_total_price
+    
   end
 
 end

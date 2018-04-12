@@ -11,34 +11,33 @@ import {
 class UserShow extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      load: true
+    };
   }
   componentDidMount(){
-    this.props.fetchUser(this.props.user.id);
-    this.props.fetchShoppingCartItems();
-  }
-  totalPrice(){
-    let total = 0;
-    this.props.priceItem.forEach(function(item) {
-      total += item.quantity * item.price;
-    });
-    return total;
+    this.props.fetchUser(this.props.currentUser.user.id);
+    this.props.fetchShoppingCartItems().then(() =>
+    this.setState({load: false})
+  );
   }
 
   cart() {
-    if (!this.props.cartItems) {
+    if (this.state.load) {
       return null;
     } else {
       return(
-        this.props.cartItems.map(item =>
-          <div key={item.id}>
-            <Link to={`/product/${item.id}`}
+        this.props.currentUser.user.shopping_cart_items.map(itemId =>
+          <div key={itemId}>
+            <Link to={`/product/${itemId}`}
               className="sell-item">
               <li>
-                <img src={item.img_url}>
+                <img src={this.props.currentUser.products[itemId].img_url}>
                 </img>
                 <span>
-                  {item.title}
+                  {this.props.currentUser.products[itemId].title}
                 </span>
+                <h3>{}</h3>
               </li>
             </Link>
           </div>
@@ -48,15 +47,18 @@ class UserShow extends React.Component {
   }
 
   render(){
-    const productItems = this.props.products.map(product =>
-      <div key={product.id}>
-        <Link to={`/product/${product.id}`}
+    if (this.state.load) {
+      return null;
+    } else {
+    const productItems = this.props.currentUser.user.product_ids.map(productId =>
+      <div key={productId}>
+        <Link to={`/product/${productId}`}
           className="sell-item">
           <li>
-            <img src={product.img_url}>
+            <img src={this.props.currentUser.products[productId].img_url}>
             </img>
             <span>
-              {product.title}
+              {this.props.currentUser.products[productId].title}
             </span>
           </li>
         </Link>
@@ -66,8 +68,8 @@ class UserShow extends React.Component {
     return(
       <div className="user-info">
         <div className="user-detail">
-          <h1>Hi, {this.props.user.name}</h1>
-          <h2>email: {this.props.user.email}</h2>
+          <h1>Hi, {this.props.currentUser.user.name}</h1>
+          <h2>email: {this.props.currentUser.user.email}</h2>
         </div>
         <div className="products-and-carts">
           <div className="user-sell-products">
@@ -85,7 +87,7 @@ class UserShow extends React.Component {
         </div>
       </div>
     );
-  }
+  }}
 }
 
 export default UserShow;

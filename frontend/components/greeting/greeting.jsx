@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-const Greeting = ({ currentUser, logout, openModal, login }) => {
+import SearchContainer from '../search/search';
+
+const Greeting = ({ currentUser, logout, openModal, login, titles }) => {
 
   const sessionLinks = () => (
     <nav className="nav-bar">
@@ -9,8 +11,7 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
           <h1>Jtsy</h1>
         </Link>
         <div className="search-bar">
-          <input type="text"></input>
-          <button className="search-button">Search</button>
+          <SearchContainer titles={titles}/>
         </div>
       </div>
       <div className="login-signup">
@@ -31,6 +32,7 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
       </div>
     </nav>
   );
+
   const personalGreeting = () => (
       <nav className="nav-bar">
         <div className="left-nav">
@@ -38,8 +40,7 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
             <h1>Jtsy</h1>
           </Link>
           <div className="search-bar">
-            <input type="text"></input>
-            <button className="search-button">Search</button>
+            <SearchContainer titles={titles}/>
           </div>
         </div>
         <div className="loogedIn-user">
@@ -52,13 +53,13 @@ const Greeting = ({ currentUser, logout, openModal, login }) => {
               <span>Home</span>
             </div>
           </Link>
-          <Link className="user-icon-link" to={`/users/${currentUser.id}`}>
+          <Link className="user-icon-link" to={`/users/${currentUser.user.id}`}>
             <div className="user-icon">
               <i className="fa fa-user-circle" aria-hidden="true"></i>
               <span>You</span>
             </div>
           </Link>
-          <button className="header-button" onClick={logout}>Log Out</button>
+          <button className="header-button" onClick={ () => logout() }>Log Out</button>
           <div className="cart-icon">
             <i className="fa fa-shopping-cart" aria-hidden="true"></i>
             <span>Cart</span>

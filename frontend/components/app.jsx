@@ -19,6 +19,7 @@ import ProductShowContainer from './product/product_show_container';
 import ProductCreateContainer from './product/product_create_container';
 import ProductEditContainer from './product/product_edit_container';
 import UserShowContainer from './user/user_show_container';
+import SearchContainer from './search/search_container';
 const App = () => (
   <div>
     <Modal />

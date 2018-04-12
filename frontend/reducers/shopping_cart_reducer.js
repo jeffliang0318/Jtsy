@@ -3,6 +3,8 @@ import merge from 'lodash/merge';
 import { RECEIVE_ALL_CART_ITEMS, RECEIVE_CART_ITEM, DELETE_CART_ITEM} from
 '../actions/shopping_cart_item_actions';
 
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+
   const initialState = {
     products: {},
     cart: {},
@@ -12,6 +14,8 @@ import { RECEIVE_ALL_CART_ITEMS, RECEIVE_CART_ITEM, DELETE_CART_ITEM} from
   const shoppingCartReducer = (oldState = initialState, action) => {
     Object.freeze(oldState);
     switch (action.type) {
+      // case RECEIVE_CURRENT_USER:
+      //   return action.payload.shopping_cart_items;
       case RECEIVE_ALL_CART_ITEMS:
         return action.items;
       case RECEIVE_CART_ITEM:

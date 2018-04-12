@@ -12,7 +12,7 @@ class productForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      user_id: this.props.currentUser.id,
+      user_id: null,
       img_url: "",
       title: "",
       description: "",
@@ -38,7 +38,7 @@ class productForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    let product = {};
+    let product = { user_id: this.props.currentUser.id };
     for (let key in this.state) {
       if ((key === "uploadedFile") || key === "redirectToNewPage") continue;
       product[key]=this.state[key];

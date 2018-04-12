@@ -6,10 +6,7 @@ import { fetchShoppingCartItems } from "../../actions/shopping_cart_item_actions
 
 const mapStateToProps = state => {
   return {
-    products: Object.values(state.ui.session.currentUser.products),
-    priceItem: Object.values(state.ui.session.currentUser.shopping_cart_items),
-    user: state.ui.session.currentUser,
-    cartItems: Object.values(state.entities.shoppingCart.products)
+    currentUser: state.ui.session.currentUser,
   };
 };
 

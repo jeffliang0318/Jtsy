@@ -2,16 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const ProductItem = ({ product }) => {
+const ProductItem = ({ key, product }) => {
   return (
-    <li className='product-index-item'>
-      <Link to={`/product/${product.id}`}>
-        <img src={product.img_url} height="100"></img>
-        <span className="item-des">
-          <strong className="item-title">{product.title}</strong>
-          <strong className="item-price">${product.price}</strong>
-        </span>
-      </Link>
-    </li>);
+    <div key={key}>
+      <li className='product-index-item'>
+        <Link to={`/product/${product.id}`}>
+          <img src={product.img_url} height="100"></img>
+          <span className="item-des">
+            <strong className="item-title">{product.title}</strong>
+            <strong className="item-price">${product.price}</strong>
+          </span>
+        </Link>
+      </li>
+    </div>
+  );
 };
 export default ProductItem;
