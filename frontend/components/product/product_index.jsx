@@ -30,7 +30,7 @@ class ProductIndex extends React.Component {
       const products = this.props.products.map(
         product => {
           return (
-            <ProductItem key={product.product_id} product={ product }/>
+            <ProductItem key={product.id} product={ product }/>
           );
         });
 

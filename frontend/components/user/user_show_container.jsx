@@ -7,6 +7,7 @@ import { fetchShoppingCartItems } from "../../actions/shopping_cart_item_actions
 const mapStateToProps = state => {
   return {
     currentUser: state.ui.session.currentUser,
+    product: state.entities.product,
   };
 };
 

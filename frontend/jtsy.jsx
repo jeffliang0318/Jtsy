@@ -7,8 +7,9 @@ import { createShoppingCartItem } from "./actions/shopping_cart_item_actions.js"
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
-    const preloadedState = { ui: {session: { currentUser: window.currentUser } } };
+    const preloadedState = { ui: {session: { currentUser: window.currentUser.user } } };
     store = configureStore(preloadedState);
+    console.log(window.currentUser.user);
     delete window.currentUser;
   } else {
     store = configureStore();

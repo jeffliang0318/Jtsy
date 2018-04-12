@@ -16,10 +16,13 @@ class UserShow extends React.Component {
     };
   }
   componentDidMount(){
-    this.props.fetchUser(this.props.currentUser.user.id);
+    console.log("component did mount")
+
     this.props.fetchShoppingCartItems().then(() =>
-    this.setState({load: false})
-  );
+      this.props.fetchUser(this.props.currentUser.id).then(() =>
+        this.setState({load: false})
+      )
+    );
   }
 
   cart() {
@@ -27,15 +30,15 @@ class UserShow extends React.Component {
       return null;
     } else {
       return(
-        this.props.currentUser.user.shopping_cart_items.map(itemId =>
+        this.props.currentUser.shopping_cart_items.map(itemId =>
           <div key={itemId}>
             <Link to={`/product/${itemId}`}
               className="sell-item">
               <li>
-                <img src={this.props.currentUser.products[itemId].img_url}>
+                <img src={this.props.product[itemId].img_url}>
                 </img>
                 <span>
-                  {this.props.currentUser.products[itemId].title}
+                  {this.props.product[itemId].title}
                 </span>
                 <h3>{}</h3>
               </li>
@@ -45,20 +48,25 @@ class UserShow extends React.Component {
       );
     }
   }
+  productCheck() {
 
+  }
   render(){
     if (this.state.load) {
       return null;
     } else {
-    const productItems = this.props.currentUser.user.product_ids.map(productId =>
+
+      console.log(this.props.currentUser.product_ids)
+      console.log(this.props.product)
+    const productItems = this.props.currentUser.product_ids.map(productId =>
       <div key={productId}>
         <Link to={`/product/${productId}`}
           className="sell-item">
           <li>
-            <img src={this.props.currentUser.products[productId].img_url}>
+            <img src={this.props.product[productId].img_url}>
             </img>
             <span>
-              {this.props.currentUser.products[productId].title}
+              {this.props.product[productId].title}
             </span>
           </li>
         </Link>
@@ -68,8 +76,8 @@ class UserShow extends React.Component {
     return(
       <div className="user-info">
         <div className="user-detail">
-          <h1>Hi, {this.props.currentUser.user.name}</h1>
-          <h2>email: {this.props.currentUser.user.email}</h2>
+          <h1>Hi, {this.props.currentUser.name}</h1>
+          <h2>email: {this.props.currentUser.email}</h2>
         </div>
         <div className="products-and-carts">
           <div className="user-sell-products">

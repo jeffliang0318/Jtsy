@@ -13,7 +13,9 @@
    opacity: 1;
    transform: translateY(0);
  }
-
+ .auto {
+   width:35vw;
+ }
  .auto-leave.auto-leave-active {
    opacity: 0.01;
    transform: translateY(500%);

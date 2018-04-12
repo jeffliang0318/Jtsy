@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const ProductItem = ({ key, product }) => {
+const ProductItem = ({ product }) => {
   return (
-    <div key={key}>
+    <div>
       <li className='product-index-item'>
         <Link to={`/product/${product.id}`}>
           <img src={product.img_url} height="100"></img>

@@ -18,8 +18,8 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
         delete newState[action.id];
         return newState;
       case RECEIVE_CURRENT_USER:
-          const product = action.payload;
-          return merge({}, oldState, { product });
+          const product = action.payload.products;
+          return merge({}, oldState, product);
 
       default:
         return oldState;
