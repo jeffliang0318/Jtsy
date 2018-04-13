@@ -57,7 +57,6 @@ export default class Search extends React.Component {
   }
 
   render() {
-    // console.log(this.matches());s
     let results = this.matches().map((result, i) => {
       let id = this.props.productId;
       return (

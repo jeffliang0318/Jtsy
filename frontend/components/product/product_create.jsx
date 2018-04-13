@@ -38,7 +38,6 @@ class productForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    console.log(this.props.currentUser.id);
     const id = this.props.currentUser.id;
     let product = { };
     for (let key in this.state) {

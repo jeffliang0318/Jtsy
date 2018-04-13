@@ -53,6 +53,19 @@ const Protected = ({ component: Component, path, loggedIn, exact, redirectModal 
 **Create the item you want to sell**
 
 To sell something, you need to upload a photo, enter the product title, description, and price, the title is default to 1.
-
+The price has a default value on the website
 
 ![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523655879/Screen_Shot_2018-04-13_at_2.39.44_PM.png)
+
+```js
+
+class Product < ApplicationRecord
+  validates :user_id, :img_url, :title, :description, presence: true
+
+  validates :quantity, numericality: { greater_than: 0 }
+
+  validates :price, numericality: { greater_than: 0 }
+
+end
+
+```

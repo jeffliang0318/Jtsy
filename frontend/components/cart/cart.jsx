@@ -17,7 +17,6 @@ class Cart extends React.Component {
     };
   }
   componentDidMount(){
-    console.log("component did mount");
 
     this.props.fetchShoppingCartItems().then(() =>
       this.props.fetchUser(this.props.currentUser.id).then(() =>

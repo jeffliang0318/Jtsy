@@ -16,7 +16,6 @@ class UserShow extends React.Component {
     };
   }
   componentDidMount(){
-    console.log("component did mount")
 
     this.props.fetchShoppingCartItems().then(() =>
       this.props.fetchUser(this.props.currentUser.id).then(() =>
@@ -33,8 +32,6 @@ class UserShow extends React.Component {
       return null;
     } else {
 
-      console.log(this.props.currentUser.product_ids)
-      console.log(this.props.product)
     const productItems = this.props.currentUser.product_ids.map(productId =>
       <div className="each-item-in-user-show"key={productId}>
         <section>
