@@ -57,40 +57,47 @@ class SessionForm extends React.Component {
           {this.props.loginForm}
         </div>
         <div className="session-form">
-        <h2>Welcome Back!</h2>
         <section id="login-modal" className="login-modal">
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            <br/>
             {this.renderErrors()}
             <div className="login-form">
               <br/>
-              <label>Email:
+              <div className="session-form-input">
+                <label>Email</label>
                 <input type="text"
                   value={this.state.email}
                   onChange={this.update('email')}
                   className="login-input"
-                />
-              </label>
+                  />
+              </div>
               <br/>
-              <label>Password:
+              <div className="session-form-input">
+                <label>Password</label>
                 <input type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   className="login-input"
-                />
-              </label>
+                  />
+              </div>
               <br/>
               <input className="session-submit" type="submit"
                 value={this.props.formType}/>
             </div>
           </form>
-          <button
-            onClick={() => {
-              this.props.login({email: "user@user.com", password: "123456"});
-              this.handleDemo();
+          <div className="demo-button-insection">
+            <button
+              onClick={() => {
+                this.props.login({email: "user@user.com", password: "123456"});
+                this.handleDemo();
               }
             }>
-              DEMO</button>
+            DEMO</button>
+          </div>
+          <div className="i-forgot-my-password">
+            <Link to=""><li>Forgot your password?</li></Link>
+            <Link to=""><li>Forgot your email?</li></Link>
+            <Link to=""><li>Reopen your account?</li></Link>
+          </div>
         </section>
         </div>
       </div>

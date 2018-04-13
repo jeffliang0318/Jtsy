@@ -55,45 +55,48 @@ class RegisterForm extends React.Component {
         </div>
         <div className="session-form">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <h2>Welcome to Jtsy!</h2>
-          <br/>
           {this.renderErrors()}
           <div className="login-form">
             <br/>
-            <label>Email:
+            <div className="session-form-input">
+              <label>Email</label>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
                 className="login-input"
-              />
-            </label>
-            <label>Name:
+                />
+            </div>
+            <div className="session-form-input">
+              <label>Name</label>
               <input type="text"
                 value={this.state.name}
                 onChange={this.update('name')}
                 className="login-input"
-              />
-            </label>
+                />
+            </div>
             <br/>
-            <label>Password:
+            <div className="session-form-input">
+              <label>Password</label>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
-              />
-            </label>
+                />
+            </div>
             <br/>
             <input className="session-submit" type="submit"
               value={this.props.formType}/>
           </div>
         </form>
-        <button
-          onClick={() => {
-            this.props.login({email: "user@user.com", password: "123456"});
-            this.handleDemo();
+        <div className="demo-button-insection">
+          <button
+            onClick={() => {
+              this.props.login({email: "user@user.com", password: "123456"});
+              this.handleDemo();
             }
           }>
-            DEMO</button>
+          DEMO</button>
+        </div>
       </div>
       </div>
     );

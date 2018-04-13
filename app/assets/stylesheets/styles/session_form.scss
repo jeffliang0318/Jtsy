@@ -68,6 +68,7 @@ header div button {
   display: flex;
   flex-direction: column;
   align-items: normal;
+  width: 200px;
 }
 .session-submit {
   color: white;
@@ -192,4 +193,36 @@ header div button {
 }
 .auto ul {
   position: absolute;
+}
+.session-form-input {
+  display:flex;
+  flex-direction: column;
+}
+.session-form-input label {
+  margin: 5px 0px 5px 0px;
+  color: grey;
+}
+
+.demo-button-insection {
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-button-insection button {
+  margin-top: 5px;
+  color: orange;
+  border-radius: 7px;
+  border-color: orange;
+  font-size: 20px;
+}
+.i-forgot-my-password {
+  margin-top: 10px;
+  list-style: none;
+}
+.i-forgot-my-password a {
+text-decoration: none;
+color: grey;
+}
+.i-forgot-my-password li {
+  margin-bottom: 3px;
 }
