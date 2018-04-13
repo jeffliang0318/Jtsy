@@ -43,7 +43,11 @@ class ProductEdit extends React.Component {
     let product = {};
     for (let key in this.state) {
       if ((key === "uploadedFile") || key === "redirectToNewPage") continue;
+      if (key === 'user_id') {
+        product[key] = this.props.currentUser.id;
+      }else{
       product[key]=this.state[key];
+      }
     }
     this.props.updateProduct(product).then((payload) => {
       this.props.history.push(`/product/${payload.product.id}`);

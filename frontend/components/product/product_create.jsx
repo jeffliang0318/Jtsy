@@ -38,10 +38,16 @@ class productForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    let product = { user_id: this.props.currentUser.id };
+    console.log(this.props.currentUser.id);
+    const id = this.props.currentUser.id;
+    let product = { };
     for (let key in this.state) {
       if ((key === "uploadedFile") || key === "redirectToNewPage") continue;
-      product[key]=this.state[key];
+      if (key === 'user_id') {
+        product[key] = this.props.currentUser.id;
+      }else{
+        product[key]=this.state[key];
+      }
     }
     this.props.productForm(product).then((payload) => {
       this.props.history.push(`/product/${payload.product.id}`);
