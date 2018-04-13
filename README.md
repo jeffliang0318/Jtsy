@@ -23,6 +23,7 @@ Register/Login is on the nav bar, you can surf around, check the product you wan
 If you do not have an account and too lazy to register, don't worry! All you need to do is click the DEMO button on the nav bar or on the register/login form.
 
 ![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523655017/Screen_Shot_2018-04-13_at_2.26.35_PM.png)
+
 ![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523655018/Screen_Shot_2018-04-13_at_2.27.21_PM.png)
 
 If you want to sell something without login, the website also has a friendly reminder and the login modal will pop out so you can login.
@@ -55,7 +56,6 @@ const Protected = ({ component: Component, path, loggedIn, exact, redirectModal 
 To sell something, you need to upload a photo, enter the product title, description, and price, the title is default to 1.
 The price has a default value on the website
 
-![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523655879/Screen_Shot_2018-04-13_at_2.39.44_PM.png)
 
 ```js
 
@@ -69,3 +69,31 @@ class Product < ApplicationRecord
 end
 
 ```
+
+![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523655879/Screen_Shot_2018-04-13_at_2.39.44_PM.png)
+
+**Update items in your shop**
+
+By clicking the update button, the user will be redirected to the product edit page with product information filled.
+And you can only edit the item in your shop.
+
+![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523659303/Screen_Shot_2018-04-13_at_2.48.27_PM.png)
+
+![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523659302/Screen_Shot_2018-04-13_at_2.47.24_PM.png)
+
+**Search**
+Autocomplete in search
+
+![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523659302/Screen_Shot_2018-04-13_at_2.49.13_PM.png)
+
+![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523659302/Screen_Shot_2018-04-13_at_2.50.27_PM.png)
+
+**Cart**
+
+You can only buy the items not in your shop
+
+![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523659303/Screen_Shot_2018-04-13_at_2.47.57_PM.png)
+
+You can see the total price in your shopping cart, and remove it if you want
+
+![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523659697/Screen_Shot_2018-04-13_at_3.47.56_PM.png)
