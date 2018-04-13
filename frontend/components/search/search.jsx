@@ -17,14 +17,18 @@ export default class Search extends React.Component {
     };
     this.selectName = this.selectName.bind(this);
     this.handleInput = this.handleInput.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClickSearch = this.handleClickSearch.bind(this);
+    this.handleUnClick = this.handleUnClick.bind(this);
   }
 
   handleInput(event) {
     this.setState({inputVal: event.currentTarget.value});
   }
-  handleClick() {
+  handleClickSearch() {
     this.setState({ clickYet: true});
+  }
+  handleUnClick() {
+    this.setState({ clickYet: false});
   }
 
   matches() {
@@ -58,7 +62,7 @@ export default class Search extends React.Component {
       let id = this.props.productId;
       return (
         <Link className="search-result-link" key={i} to={`/product/${id[i]}`}>
-          <li  onClick={this.selectName}>{result}</li>
+          <li  className="search-result-li" onClick={this.selectName}>{result}</li>
         </Link>
       );
     });
@@ -69,11 +73,12 @@ export default class Search extends React.Component {
             onChange={this.handleInput}
             value={this.state.inputVal}
             placeholder='Search...'
-            onClick={this.handleClick}
+            onClick={this.handleClickSearch}
             />
           <button className="search-button">Search</button>
-          <div className={ this.state.clickYet ? "show search-result" : "hide"}>
-            <ul id="search-result" className="result-list">
+          <div className={ this.state.clickYet ? "show search-result" : "hide"}
+            onClick={this.handleUnClick}>
+            <ul className="result-list">
               <ReactCSSTransitionGroup
                 transitionName='auto'
                 transitionEnterTimeout={500}

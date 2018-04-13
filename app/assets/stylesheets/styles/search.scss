@@ -23,8 +23,27 @@
  }
 
 .result-list {
+  position: absolute;
+  top: 80px;
+  left: 110px;
+  // top: 14%;
+  // left: 27%;
+  // transform: translate(-50%, -50%);
   background-color: white;
 }
 .search-result-link {
   text-decoration: none;
+}
+.search-result-li{
+  padding-bottom: 7px;
+  color: black
+}
+.search-result {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 10;
 }

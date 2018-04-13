@@ -85,10 +85,18 @@ class Cart extends React.Component {
         </div>
         <div className="products-and-carts">
           <div className="cart">
-            <h3>{this.cart_items_quantity()} shopping cart items</h3>
+            <h3>{this.cart_items_quantity()} items in your cart</h3>
             <ul className="cart-items">
               { this.cart() }
             </ul>
+          </div>
+          <div className="check-out-section">
+            <div className="check-out-box">
+              <div className="cart-total-price">
+              </div>
+              <div className="check-out-button">
+              </div>
+            </div>
           </div>
         </div>
       </div>
