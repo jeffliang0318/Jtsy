@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchUser } from "../../actions/session_actions";
 import Cart from "./cart";
-import { fetchShoppingCartItems } from "../../actions/shopping_cart_item_actions";
+import { fetchShoppingCartItems, deleteShoppingCartItem } from "../../actions/shopping_cart_item_actions";
 
 const mapStateToProps = state => {
   return {
@@ -13,7 +13,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchUser: id => dispatch(fetchUser(id)),
-  fetchShoppingCartItems: () => dispatch(fetchShoppingCartItems())
+  fetchShoppingCartItems: () => dispatch(fetchShoppingCartItems()),
+  deleteShoppingCartItem: (id) => dispatch(deleteShoppingCartItem(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

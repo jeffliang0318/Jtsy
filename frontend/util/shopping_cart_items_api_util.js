@@ -28,10 +28,9 @@ export const updateShoppingCartItem = item => (
   })
 );
 
-export const deleteShoppingCartItem = item => (
+export const deleteShoppingCartItem = id => (
   $.ajax({
     method: "DELETE",
-    url: `api/shopping_cart_items/${item.id}`,
-    data: { item }
+    url: `api/shopping_cart_items/${id}`,
   })
 );

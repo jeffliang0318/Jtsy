@@ -24,10 +24,16 @@ class Cart extends React.Component {
       )
     );
   }
+  handleDelete(id){
+    this.props.deleteShoppingCartItem(id).then(
+      this.props.history.push('/')
+    );
+  }
   cart_items_quantity() {
     const quantity = Object.keys(this.props.currentUser.shopping_cart_items).length;
     return quantity;
   }
+
   cart() {
     if (this.state.load) {
       return null;
@@ -51,6 +57,7 @@ class Cart extends React.Component {
               <h3>Price for each: ${ this.props.product[itemId].price }</h3>
               <strong>Quantity: {this.props.currentUser.total_price.price_per_item[itemId]/this.props.product[itemId].price}</strong>
               <strong>Total: ${this.props.currentUser.total_price.price_per_item[itemId]} </strong>
+              <button className="remove-cart-item" onClick={ () => this.props.deleteShoppingCartItem(this.handleDelete(itemId))}>Remove</button>
             </div>
           </div>
         )
