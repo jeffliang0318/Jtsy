@@ -53,7 +53,7 @@ export default class Search extends React.Component {
 
   selectName(event) {
     let title = event.currentTarget.innerText;
-    this.setState({inputVal: title});
+    this.setState({inputVal: ""});
   }
 
   render() {
@@ -62,7 +62,7 @@ export default class Search extends React.Component {
       let id = this.props.productId;
       return (
         <Link className="search-result-link" key={i} to={`/product/${id[i]}`}>
-          <li  className="search-result-li" onClick={this.selectName}>{result}</li>
+          <li  className="search-result-li">{result}</li>
         </Link>
       );
     });

@@ -59,7 +59,9 @@ class ProductShow extends React.Component {
     if (this.props.currentUser) {
       if (this.props.currentUser.id !== this.props.product.user_id) {
         return (
-          <button onClick={this.handleAddToCart}>Add to Cart</button>
+          <div className="add-to-cart-button">
+            <button onClick={this.handleAddToCart}>Add to Cart</button>
+          </div>
         );
       }
     }
@@ -72,21 +74,26 @@ class ProductShow extends React.Component {
       <div className='main-show'>
         <div className="left-column">
           <img className="product-img" src={this.props.product.img_url}/>
-          <div className="description">
-            <h2>Description</h2>
+          <div className="sell-item-description">
+            <h2>Component Detail</h2>
             <p>{this.props.product.description}</p>
           </div>
         </div>
         <div className="right-column">
           <div className="cart-info">
             <div className="product-info">
-              <span className="title">Title{this.props.product.title}</span>
+              <span className="title">{this.props.product.title}</span>
               <span className="price">${this.props.product.price}</span>
             </div>
             { this.addToCart() }
             { this.productDelete() }
-            {(this.props.product.id)}
-            {(this.props.product.user_id)}
+            <div className="shipping-detail">
+              <p>Shipping & returns</p>
+              <br />
+                <li>Ready to ship in 3-5 days.</li>
+                <li>Made in Japan.</li>
+                <li>Exceptions may apply. See return policy</li>
+            </div>
           </div>
         </div>
       </div>
