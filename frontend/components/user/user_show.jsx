@@ -64,17 +64,22 @@ class UserShow extends React.Component {
       console.log(this.props.currentUser.product_ids)
       console.log(this.props.product)
     const productItems = this.props.currentUser.product_ids.map(productId =>
-      <div key={productId}>
-        <Link to={`/product/${productId}`}
-          className="sell-item">
-          <li>
-            <img src={this.props.product[productId].img_url}>
-            </img>
-            <span>
-              {this.props.product[productId].title}
-            </span>
-          </li>
-        </Link>
+      <div className="each-item-in-user-show"key={productId}>
+        <section>
+          <Link to={`/product/${productId}`}
+            className="sell-item">
+            <li>
+              <img src={this.props.product[productId].img_url}>
+              </img>
+              <span>
+                {this.props.product[productId].title}
+              </span>
+            </li>
+          </Link>
+        </section>
+        <section className="sell-item-price-info">
+          <span>Selling price for each item: {this.props.product[productId].price}</span>
+        </section>
       </div>
     );
 
@@ -86,7 +91,8 @@ class UserShow extends React.Component {
         </div>
         <div className="products-and-carts">
           <div className="user-sell-products">
-            <h3>Products for sell</h3>
+            <h3>Products to sell</h3>
+            <span>{this.props.currentUser.product_ids.length} items in your shop</span>
             <ul className="products-for-sell">
               { productItems }
             </ul>

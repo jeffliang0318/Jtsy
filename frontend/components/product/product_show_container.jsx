@@ -17,7 +17,8 @@ const mapDispatchToProps = dispatch => ({
   fetchProduct: (id) => dispatch(fetchProduct(id)),
   fetchShoppingCartItems: () => dispatch(fetchShoppingCartItems()),
   deleteShoppingCartItem: id => dispatch(deleteShoppingCartItem(id)),
-  createShoppingCartItem: item => dispatch(createShoppingCartItem(item))
+  createShoppingCartItem: item => dispatch(createShoppingCartItem(item)),
+  removeProduct: id => dispatch(deleteProduct(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductShow);
