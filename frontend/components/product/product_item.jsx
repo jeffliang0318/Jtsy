@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { currencyRound } from '../../util/helpers';
 
 const ProductItem = ({ product }) => {
   return (
@@ -10,7 +10,7 @@ const ProductItem = ({ product }) => {
           <img src={product.img_url} height="100"></img>
           <span className="item-des">
             <strong className="item-title">{product.title}</strong>
-            <strong className="item-price">${product.price}</strong>
+            <strong className="item-price">{currencyRound.format(product.price)}</strong>
           </span>
         </Link>
       </li>

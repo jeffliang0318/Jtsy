@@ -7,6 +7,7 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
+import { currencyRound } from '../../util/helpers';
 
 class Cart extends React.Component {
   constructor(props){
@@ -54,9 +55,9 @@ class Cart extends React.Component {
               </li>
             </Link>
             <div className="price-info">
-              <h3>Price for each: ${ this.props.product[itemId].price }</h3>
+              <h3>Price for each: { currencyRound.format(this.props.product[itemId].price) }</h3>
               <strong>Quantity: {this.props.currentUser.total_price.price_per_item[itemId]/this.props.product[itemId].price}</strong>
-              <strong>Total: ${this.props.currentUser.total_price.price_per_item[itemId]} </strong>
+              <strong>Total: { currencyRound.format(this.props.currentUser.total_price.price_per_item[itemId])} </strong>
               <button className="remove-cart-item" onClick={ () => this.props.deleteShoppingCartItem(this.handleDelete(itemId))}>Remove</button>
             </div>
           </div>

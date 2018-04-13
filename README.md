@@ -14,7 +14,7 @@ Here is the working live demo : [https://jtsy.herokuapp.com/](https://jtsy.herok
 
 ### Feature
 
-Register/login modal
+**Register/login modal**
 
 ![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523653311/Screen_Shot_2018-04-13_at_1.56.25_PM.png)
 
@@ -27,11 +27,30 @@ If you do not have an account and too lazy to register, don't worry! All you nee
 
 If you want to sell something without login, the website also has a friendly reminder and the login modal will pop out so you can login.
 
+```javascript
+const Protected = ({ component: Component, path, loggedIn, exact, redirectModal }) => (
+  <Route path={path} exact={exact} render={(props) => {
+     if (loggedIn) {
+      return <Component {...props} />;
+    } else {
+      redirectModal("login");
+        return (
+          <div className="plz-login-img">
+            <img src="http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523430004/800px-Gear-kegelzahnrad.svg.png"></img>
+            <strong>Please Register Or Log In as DEMO User</strong>
+        </div>
+        );
+    }
+    }
+  } />
+);
+```
+
 ![index](http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523655930/Screen_Shot_2018-04-13_at_2.45.12_PM.png)
 
 *You need to login if you want to add items to your cart, create items you want to sell, delete and edit the items in your shop.
 
-Create the item you want to sell
+**Create the item you want to sell**
 
 To sell something, you need to upload a photo, enter the product title, description, and price, the title is default to 1.
 
