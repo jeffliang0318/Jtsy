@@ -39,7 +39,10 @@ class ProductShow extends React.Component {
       const productId = this.props.product.id;
       this.setState({cart_id: this.props.currentUser.shopping_cart_id ,
         product_id: this.props.product.id, quantity: 1, price: this.props.price }, () =>
-        this.props.createShoppingCartItem(this.state));
+        this.props.createShoppingCartItem(this.state).then(() =>
+        this.props.history.push(`/users/${this.props.currentUser.id}/cart`)
+      )
+      );
     }
   }
   productDelete(){

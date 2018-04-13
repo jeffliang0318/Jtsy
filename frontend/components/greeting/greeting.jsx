@@ -5,6 +5,7 @@ import SearchContainer from '../search/search';
 const Greeting = ({ currentUser, logout, openModal, login, titles, productId }) => {
 
   const sessionLinks = () => (
+    <div>
     <nav className="nav-bar">
       <div className="left-nav">
         <Link to="/" className="header-link">
@@ -27,9 +28,19 @@ const Greeting = ({ currentUser, logout, openModal, login, titles, productId }) 
         <button className="sign-in-button" onClick={() => openModal('login')}>Sign in</button>
       </div>
     </nav>
+      <div className="category-bar">
+        <Link to="">Automation Components</Link>
+        <Link to="" >Fasteners</Link>
+        <Link to="">Materials</Link>
+        <Link to="">Wiring Components</Link>
+        <Link to="">Processing Tools</Link>
+        <Link to="">Electrical Components</Link>
+      </div>
+    </div>
   );
 
   const personalGreeting = () => (
+    <div>
       <nav className="nav-bar">
         <div className="left-nav">
           <Link to="/" className="header-link">
@@ -58,12 +69,21 @@ const Greeting = ({ currentUser, logout, openModal, login, titles, productId }) 
           <button className="header-button" onClick={ () => logout() }>Log Out</button>
           <div className="cart-icon">
             <Link to={`/users/${currentUser.id}/cart`}>
-            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-            <span>Cart</span>
+              <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+              <span>Cart</span>
             </Link>
           </div>
         </div>
       </nav>
+      <div className="category-bar">
+        <Link to="">Automation Components</Link>
+        <Link to="" >Fasteners</Link>
+        <Link to="">Materials</Link>
+        <Link to="">Wiring Components</Link>
+        <Link to="">Processing Tools</Link>
+        <Link to="">Electrical Components</Link>
+      </div>
+    </div>
   );
 
   return (

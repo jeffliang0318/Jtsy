@@ -55,10 +55,10 @@ export default class Search extends React.Component {
   render() {
     // console.log(this.matches());s
     let results = this.matches().map((result, i) => {
-      let id = this.props.propductId;
+      let id = this.props.productId;
       return (
-        <Link key={i} to={`/product/${result[1]}`}>
-          <li onClick={this.selectName}>{result}</li>
+        <Link className="search-result-link" key={i} to={`/product/${id[i]}`}>
+          <li  onClick={this.selectName}>{result}</li>
         </Link>
       );
     });
@@ -72,14 +72,16 @@ export default class Search extends React.Component {
             onClick={this.handleClick}
             />
           <button className="search-button">Search</button>
-          <ul id="search-result" className={ this.state.clickYet ? "show" : "hide"}>
-            <ReactCSSTransitionGroup
-              transitionName='auto'
-              transitionEnterTimeout={500}
-              transitionLeaveTimeout={500}>
-              {results}
-            </ReactCSSTransitionGroup>
-          </ul>
+          <div className={ this.state.clickYet ? "show search-result" : "hide"}>
+            <ul id="search-result" className="result-list">
+              <ReactCSSTransitionGroup
+                transitionName='auto'
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={500}>
+                {results}
+              </ReactCSSTransitionGroup>
+            </ul>
+          </div>
         </div>
       </div>
     );

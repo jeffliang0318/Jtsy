@@ -2,7 +2,6 @@
 header {
   padding-top: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid $light-grey;
 }
 
 header nav {
@@ -11,6 +10,7 @@ header nav {
   align-items: center;
   padding-left: 3vw;
   padding-right: 3vw;
+  padding-bottom: 3vh;
 }
 .loogedIn-user {
   display: flex;
@@ -118,11 +118,17 @@ header div button {
 
 }
 .cart-icon {
-  display: flex;
-  flex-direction: column;
   border-left: 1px solid $grey;
   padding-left: 10px;
+}
+
+.cart-icon a {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  color: grey;
+  text-decoration: none;
+
 }
 .home-icon {
   display: flex;

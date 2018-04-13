@@ -36,14 +36,6 @@ class ProductIndex extends React.Component {
 
         return (
           <div >
-            <div className="category-bar">
-              <Link to="">Automation Components</Link>
-              <Link to="" >Fasteners</Link>
-              <Link to="">Materials</Link>
-              <Link to="">Wiring Components</Link>
-              <Link to="">Processing Tools</Link>
-              <Link to="">Electrical Components</Link>
-            </div>
             <SimpleSlider/ >
               <div className='main'>
                 <div >

@@ -24,7 +24,10 @@ class Cart extends React.Component {
       )
     );
   }
-
+  cart_items_quantity() {
+    const quantity = Object.keys(this.props.currentUser.shopping_cart_items).length;
+    return quantity;
+  }
   cart() {
     if (this.state.load) {
       return null;
@@ -45,8 +48,9 @@ class Cart extends React.Component {
               </li>
             </Link>
             <div className="price-info">
-              <h3>Price for each: { this.props.product[itemId].price }</h3>
-              <strong>Total {this.props.currentUser.total_price.price_per_item[itemId]} </strong>
+              <h3>Price for each: ${ this.props.product[itemId].price }</h3>
+              <strong>Quantity: {this.props.currentUser.total_price.price_per_item[itemId]/this.props.product[itemId].price}</strong>
+              <strong>Total: ${this.props.currentUser.total_price.price_per_item[itemId]} </strong>
             </div>
           </div>
         )
@@ -78,12 +82,10 @@ class Cart extends React.Component {
     return(
       <div className="user-info">
         <div className="user-detail">
-          <h1>Hi, {this.props.currentUser.name}</h1>
-          <h2>email: {this.props.currentUser.email}</h2>
         </div>
         <div className="products-and-carts">
           <div className="cart">
-            <h3>Shopping cart items</h3>
+            <h3>{this.cart_items_quantity()} shopping cart items</h3>
             <ul className="cart-items">
               { this.cart() }
             </ul>
