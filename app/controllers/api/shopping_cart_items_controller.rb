@@ -1,7 +1,7 @@
 class Api::ShoppingCartItemsController < ApplicationController
   def index
     @items = current_user.shopping_cart_items
-    render :index
+    render "api/shopping_cart_items/index"
   end
 
   def create
@@ -30,9 +30,11 @@ class Api::ShoppingCartItemsController < ApplicationController
   end
 
   def destroy
-    @item = ShoppingCartItem.find(params[:id])
-    @item.destroy
-    render "api/shopping_cart_items"
+    @items = ShoppingCartItem.where(product_id: params[:id])
+      @items.each do |item|
+        item.destroy
+      end
+    render "api/shopping_cart_items/index"
   end
 
   def cart_item_params

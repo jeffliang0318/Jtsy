@@ -1,6 +1,6 @@
 json.cart do
   @items.each do |item|
-    json.set! item.product_id do
+    json.set! item.id do
       json.extract! item, :product_id, :quantity, :id
       json.price item.price
       json.total_price (item.price * item.quantity).round(2)
