@@ -25,34 +25,6 @@ class UserShow extends React.Component {
     );
   }
 
-  cart() {
-    if (this.state.load) {
-      return null;
-    } else {
-      return(
-        this.props.currentUser.shopping_cart_items.map(itemId =>
-          <div key={itemId}>
-            <Link to={`/product/${itemId}`}
-              className="sell-item">
-              <li>
-                <div className="cart-item-img-title">
-                  <img src={this.props.product[itemId].img_url}>
-                  </img>
-                  <span>
-                    {this.props.product[itemId].title}
-                  </span>
-                </div>
-              </li>
-            </Link>
-            <div className="price-info">
-              <h3>Price for each: { this.props.product[itemId].price }</h3>
-              <strong>Total {this.props.currentUser.total_price.price_per_item[itemId]} </strong>
-            </div>
-          </div>
-        )
-      );
-    }
-  }
   productCheck() {
 
   }

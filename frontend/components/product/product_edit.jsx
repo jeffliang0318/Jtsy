@@ -92,7 +92,6 @@ class ProductEdit extends React.Component {
   render() {
     if (this.state.redirectToNewPage) {
       const showId = Object.values(this.props.currentUser.products).slice(-1)[0].id;
-      debugger;
      return (
      <Redirect to={`/product/${showId}`}/>
      );

@@ -26,7 +26,7 @@ class Cart extends React.Component {
   }
   handleDelete(id){
     this.props.deleteShoppingCartItem(id).then(
-      this.props.history.push('/')
+      this.props.history.push(`/product/${id}`)
     );
   }
   cart_items_quantity() {

@@ -30,7 +30,7 @@ class ProductShow extends React.Component {
   handleDelete(e){
     e.preventDefault();
     this.props.removeProduct(this.props.product.id).then(
-      this.props.history.push('/')
+      this.props.history.push(`/`)
     );
   }
   handleAddToCart(e) {
