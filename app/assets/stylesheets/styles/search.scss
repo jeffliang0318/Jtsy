@@ -23,13 +23,20 @@
  }
 
 .result-list {
-  position: absolute;
-  top: 80px;
-  left: 110px;
-  // top: 14%;
-  // left: 27%;
-  // transform: translate(-50%, -50%);
+  top: 56px;
+  left: 93px;
   background-color: white;
+  border: 1px solid #eee;
+  border-radius: 0 4px 4px 4px;
+  padding: 10px;
+  box-shadow: 0px 0px 6px 1px #00000038;
+  // position: absolute;
+  // top: 80px;
+  // left: 110px;
+  // // top: 14%;
+  // // left: 27%;
+  // // transform: translate(-50%, -50%);
+  // background-color: white;
 }
 .search-result-link {
   text-decoration: none;

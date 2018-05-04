@@ -7,11 +7,17 @@ const ProductItem = ({ product }) => {
     <div>
       <li className='product-index-item'>
         <Link to={`/product/${product.id}`}>
-          <img src={product.img_url} height="100"></img>
-          <span className="item-des">
-            <strong className="item-title">{product.title}</strong>
-            <strong className="item-price">{currencyRound.format(product.price)}</strong>
-          </span>
+          <div className='product-item-container'>
+            <div className='product-item-info'>
+              <img src={product.img_url} height="100"></img>
+              <span className="item-des">
+                <strong className="item-title">{product.title}</strong>
+              </span>
+            </div>
+            <div className="price-index-page">
+              <strong className="item-price">{currencyRound.format(product.price)}</strong>
+            </div>
+          </div>
         </Link>
       </li>
     </div>

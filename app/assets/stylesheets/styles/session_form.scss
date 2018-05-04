@@ -17,11 +17,12 @@ header nav {
   align-items: center;
 }
 .sell-link {
-  font-size: 20px;
+  font-size: 2vh;
   padding-right: 20px;
   text-decoration: none;
   color: orange;
 }
+
 header div button {
   color: orange;
   background-color: white;
@@ -53,7 +54,7 @@ header div button {
   margin-left: 10px;
 }
 .sign-in-button {
-  border: 1px solid orange;
+  // border: 1px solid orange;
 }
 .modal-background {
   position: fixed;

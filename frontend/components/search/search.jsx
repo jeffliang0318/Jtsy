@@ -74,7 +74,6 @@ export default class Search extends React.Component {
             placeholder='Search...'
             onClick={this.handleClickSearch}
             />
-          <button className="search-button">Search</button>
           <div className={ this.state.clickYet ? "show search-result" : "hide"}
             onClick={this.handleUnClick}>
             <ul className="result-list">
