@@ -32,6 +32,12 @@ const App = () => (
       <Route exact path="/product/:id" component={ProductShowContainer}/>
       <ProtectedRoute exact path="/products/new"
         component={ ProductCreateContainer }/>
+      <Route exact path="/automation"/>
+      <Route exact path="/fasteners"/>
+      <Route exact path="/materials"/>
+      <Route exact path="/wiring"/>
+      <Route exact path="/processing"/>
+      <Route exact path="/electrical"/>
       <ProtectedRoute exact path="/products/:id/edit"
           component={ ProductEditContainer }/>
         <Route exact path="/users/:id/cart" component={ CartContainer }/ >

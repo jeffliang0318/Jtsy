@@ -29,12 +29,12 @@ const Greeting = ({ currentUser, logout, openModal, login, titles, productId }) 
       </div>
     </nav>
       <div className="category-bar">
-        <Link to="">Automation Components</Link>
-        <Link to="" >Fasteners</Link>
-        <Link to="">Materials</Link>
-        <Link to="">Wiring Components</Link>
-        <Link to="">Processing Tools</Link>
-        <Link to="">Electrical Components</Link>
+        <Link to="/automation">Automation Components</Link>
+        <Link to="/fasteners" >Fasteners</Link>
+        <Link to="/materials">Materials</Link>
+        <Link to="/wiring">Wiring Components</Link>
+        <Link to="/processing">Processing Tools</Link>
+        <Link to="/electrical">Electrical Components</Link>
       </div>
     </div>
   );
@@ -76,12 +76,12 @@ const Greeting = ({ currentUser, logout, openModal, login, titles, productId }) 
         </div>
       </nav>
       <div className="category-bar">
-        <Link to="">Automation Components</Link>
-        <Link to="" >Fasteners</Link>
-        <Link to="">Materials</Link>
-        <Link to="">Wiring Components</Link>
-        <Link to="">Processing Tools</Link>
-        <Link to="">Electrical Components</Link>
+        <Link to="/automation">Automation Components</Link>
+        <Link to="/fasteners" >Fasteners</Link>
+        <Link to="/materials">Materials</Link>
+        <Link to="/wiring">Wiring Components</Link>
+        <Link to="/processing">Processing Tools</Link>
+        <Link to="/electrical">Electrical Components</Link>
       </div>
     </div>
   );
