@@ -12,11 +12,18 @@ export const fetchProduct = id => (
   })
 );
 
+export const fetchCategory = category => (
+  $.ajax({
+      method: "GET",
+      url: `api/categories/${category}`
+  })
+);
+
 export const createProduct = product => (
   $.ajax({
       method: "POST",
       url: 'api/products',
-      data: { product } 
+      data: { product }
   })
 );
 

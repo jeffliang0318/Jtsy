@@ -16,6 +16,7 @@ import SignupFormContainer from './session_form/signup_form_container.jsx';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProductIndexContainer from './product/product_index_container';
 import ProductShowContainer from './product/product_show_container';
+import CategoryContainer from './product/category_container';
 import ProductCreateContainer from './product/product_create_container';
 import ProductEditContainer from './product/product_edit_container';
 import UserShowContainer from './user/user_show_container';
@@ -32,12 +33,7 @@ const App = () => (
       <Route exact path="/product/:id" component={ProductShowContainer}/>
       <ProtectedRoute exact path="/products/new"
         component={ ProductCreateContainer }/>
-      <Route exact path="/automation"/>
-      <Route exact path="/fasteners"/>
-      <Route exact path="/materials"/>
-      <Route exact path="/wiring"/>
-      <Route exact path="/processing"/>
-      <Route exact path="/electrical"/>
+      <Route exact path="/category/:category" component={ CategoryContainer }/ >
       <ProtectedRoute exact path="/products/:id/edit"
           component={ ProductEditContainer }/>
         <Route exact path="/users/:id/cart" component={ CartContainer }/ >

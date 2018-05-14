@@ -8,22 +8,24 @@
 User.destroy_all
 Product.destroy_all
 
-user1 = User.create({email: "bearing@cearing.com", name: "Bear", password: "password"})
-user2 = User.create({email: "456@456.com", name: "456", password: "456456"})
-user3 = User.create({email: "user@user.com", password: "123456", name: "Tester"})
+user1 = User.create({email: "gina@gina.com", name: "Gina", password: "password"})
+user2 = User.create({email: "jeff@jeff.com", name: "Jeff", password: "password"})
+user3 = User.create({email: "user@user.com", password: "123456", name: "DEMO User"})
+user4 = User.create({email: "jacky@jacky.com", password: "password", name: "Jacky"})
+user5 = User.create({email: "ben@ben.com", password: "password", name: "Ben"})
 
 products = Product.create([
   {user_id: user1.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1522966546/bearing-1595147_960_720.png",
     title: "Bearings with Housings-BGSRB624ZZ",
     description: "Direct Mount, Standard with Pilot, Retained",
     quantity: 20, price: 38.62},
-  {user_id: user1.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1522966545/black_rails.jpg",
+  {user_id: user2.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1522966545/black_rails.jpg",
     title: "Seating-Bearings BGSRB630ZZ",
     description: "Direct Mount, Standard with Pilot, Retained", price: 38.62},
   {user_id: user1.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1522993688/Rotary_Clamp_Cylinders.jpg",
     title: "Clamp Cylinders-MKRCA25-31-R" ,description: "Diameter 25, Stroke 31mm, Rod Tip Shape:	Female Thread",
     quantity: 20, price: 263.77},
-  {user_id: user1.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1522994089/prna.jpg",
+  {user_id: user2.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1522994089/prna.jpg",
     title: "Small High Rotor/Standard Type, PRNA Series" ,description: "Type: Axis output of rotary actuator on one side, Main Body Shape: Round shape
 Angle of Oscillation:90°,Torque(N・m):1～Less than 3 / 3～Less than 6 / 6～Less than 10",
     quantity: 30, price: 165.82},
@@ -37,7 +39,7 @@ Angle of Oscillation:90°,Torque(N・m):1～Less than 3 / 3～Less than 6 / 6～
     {user_id: user3.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1522966545/black_rails.jpg",
       title: "Heatreated Bearings 624ZZ",
       description: "Direct Mount, Standard with Pilot, Retained", price: 38.62},
-    {user_id: user3.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523339498/Screen_Shot_2018-04-09_at_10.44.32_PM.png",
+    {user_id: user2.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523339498/Screen_Shot_2018-04-09_at_10.44.32_PM.png",
       title: "Step motor-TQR200MKE" ,description: "Category Motor Voltage Specifications DC Holding torque(N·m) 0.1 Frame Size NEMA 11,
       Closed Loop Feedback None, Step angle(°): 1.8, Reduction Gear: None",
       quantity: 20, price: 20.5},
@@ -55,7 +57,7 @@ Angle of Oscillation:90°,Torque(N・m):1～Less than 3 / 3～Less than 6 / 6～
         title: "Asco 3/4' Brass 2-Way Normally Closed 120V Solenoid Valve",
         description: "Max Operating Pressure: 150 PSI, AC/DC: AC, Body Material: Brass, Inlet Pipe Size: 3/4, Max Fluid Temperature: 180° F
 Orifice Size: 3/4", price: 99.96},
-      {user_id: user3.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523603757/DSL101.jpg",
+      {user_id: user2.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523603757/DSL101.jpg",
         title: "DSL101 Solenoid Valve" ,description: "Poppet Type - 2-Way Solenoid Valve for Size 10, 2-way Cavity",
         quantity: 20, price: 50.00},
       {user_id: user3.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523603290/800px-Drago12P_68HC12_EVB.jpg",
@@ -67,12 +69,16 @@ Orifice Size: 3/4", price: 99.96},
       {user_id: user3.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1523378380/600px-Reis_welding.jpg",
         title: "Reis_welding robot-autofeeding" ,description: "With auot feeding supply, rotation angle acurate in 0.1 degree",
         quantity: 25, price: 1279.50},
-      {user_id: user1.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1522966545/product1.jpg",
-        title: "rolling bearing-japan material" ,description: "Direct Mount, Standard with Pilot, Retained",
-        quantity: 20, price: 30.5},
-      {user_id: user1.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1522993688/Rotary_Clamp_Cylinders.jpg",
+      {user_id: user3.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1522993688/Rotary_Clamp_Cylinders.jpg",
         title: "Clamp Cylinders-MKRCA25-45-l" ,description: "Diameter 25, Stroke 31mm, Rod Tip Shape:	Female Thread",
         quantity: 20, price: 263.77},
+      {user_id: user4.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1526257248/cable_carrier.jpg",
+        title: "cable carrier MPSPS2550-50-9-S" ,description: "Nylon 6 + Glass Fiber 30%, (Operating Temperature -10 ~ 80°C), Flammability Standard UL94-HB Equivalent",
+        quantity: 20, price: 44.99, category: "automation"},
+      {user_id: user4.id, img_url: "http://res.cloudinary.com/dgxmjwbrc/image/upload/v1526257248/cable_carrier.jpg",
+        title: "Single Axis Robots RS306B-C1-C-5-150-c",
+        description: "Instruction Manual (CD-ROM), Power Connector, Dummy Connector",
+        quantity: 20, price: 1408.49, category: "automation"},
   ])
 
   # {user_id: 1, img_url: "./figure this out later", title: "Bearings with Housings-BGSRB624ZZ", description: "Direct Mount, Standard with Pilot, Retained", quantity: 20, price: 12}

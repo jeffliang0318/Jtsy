@@ -45,6 +45,10 @@ export const fetchProduct = id => dispatch => (
   APIUtil.fetchProduct(id).then(
     product => dispatch(receiveProduct(product)))
 );
+export const fetchCategory = category => dispatch => (
+  APIUtil.fetchCategory(category).then(
+    products => dispatch(receiveAllProducts(products)))
+);
 
 export const createProduct = product => dispatch => (
   APIUtil.createProduct(product).then(

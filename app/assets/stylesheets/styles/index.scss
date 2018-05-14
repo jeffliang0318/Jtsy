@@ -7,12 +7,12 @@
 .product-index-items{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .product-index-items li {
   width: 10vw;
   min-width: 150px;
-  margin: 3px;
-
+  margin: 1vh 3vw 3vw 1vh;
   //TA feedback
   min-height: calc(100% - 37px);
   border: 1px solid #ccc;
@@ -56,7 +56,7 @@ width: 60vw;
   width: 100%;
 }
 .slogan {
-  font-size: 5vh;
+  font-size: 4vw;
   font-weight: bolder;
 }
 .slogan-div{
@@ -98,4 +98,18 @@ width: 60vw;
 .item-des strong {
   padding-top: 10px;
   text-align: center;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+  top: 0;
+left: 25%;
+width: 70%;
+height: 0;
+background: #ccc;
 }

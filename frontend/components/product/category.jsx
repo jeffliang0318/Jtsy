@@ -7,18 +7,18 @@ import {
   Link,
   HashRouter
 } from 'react-router-dom';
-import SimpleSlider from "../slideshow/simpleslider";
-class ProductIndex extends React.Component {
+class Category extends React.Component {
 
   constructor(props){
     super(props);
     this.state= {
-      load: true
+      load: true,
+      title: ""
     };
   }
   componentDidMount(){
-    this.props.fetchProducts().then(() =>
-  this.setState({load: false}));
+    this.props.fetchCategory(this.props.match.params.category).then(() =>
+  this.setState({load: false, title: this.props.match.params.category}));
   }
 
   render(){
@@ -36,14 +36,12 @@ class ProductIndex extends React.Component {
 
         return (
           <div >
-            <SimpleSlider/ >
               <div className='main'>
                 <div className='slogan-div'>
-                  <strong className="slogan">Want to reduce downtime cost? Start here!</strong>
                 </div>
                 <hr></hr>
                 <div className='slogan-div'>
-                  <strong className="slogan">Most sold components!</strong>
+                  <strong className="slogan">{this.state.title}</strong>
                 </div>
                 <div className='product-index'>
                   <ul className='product-index-items'>
@@ -57,4 +55,4 @@ class ProductIndex extends React.Component {
   }
 }
 
-export default ProductIndex;
+export default Category;
