@@ -31,9 +31,9 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={ProductIndexContainer}/>
       <Route exact path="/product/:id" component={ProductShowContainer}/>
+      <Route exact path="/category/:category" component={ CategoryContainer }/ >
       <ProtectedRoute exact path="/products/new"
         component={ ProductCreateContainer }/>
-      <Route exact path="/category/:category" component={ CategoryContainer }/ >
       <ProtectedRoute exact path="/products/:id/edit"
           component={ ProductEditContainer }/>
         <Route exact path="/users/:id/cart" component={ CartContainer }/ >
