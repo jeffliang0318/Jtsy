@@ -1,0 +1,95 @@
+.header-link {
+  text-decoration: none;
+}
+#root {
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+.whole-app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+body {
+  height: 100%
+}
+
+header {
+  background-color: white;
+}
+.Not-Footer {
+  flex: 1 0 auto;
+}
+
+.Footer-Container {
+  border-bottom: 1px solid grey;
+  box-shadow: 0px 0px 5px grey;
+  flex-shrink: 0;
+  margin-top: 40px;
+}
+
+.Footer {
+  // box-shadow: 0px 0px 5px lightgrey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 50px;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.header-name {
+  font-size: 17px;
+  color: orange;
+  text-decoration: none;
+}
+
+.FooterLeft {
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+
+  p {
+    color: grey;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.FooterRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 400px;
+  h2 {
+    color: grey;
+    font-weight: normal;
+  }
+  div {
+    margin-right: 10px;
+    color: grey;
+  }
+
+  a {
+    text-decoration: none;
+    margin-left: 10px;
+  }
+}
+
+.FooterLogo {
+  padding-right: 30px;
+  font-size: 30px;
+  color: orange;
+  font-family: 'Merriweather', serif;
+}
+
+
+.footer-links img {
+  height: 30px;
+}

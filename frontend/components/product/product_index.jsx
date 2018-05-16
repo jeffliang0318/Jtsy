@@ -45,23 +45,23 @@ class ProductIndex extends React.Component {
                 <div className="feature">
                   <div className="feature-title">
                     <i className="fa fa-check" aria-hidden="true"> </i>
-                      Lowest Price
+                      Unique items
                   </div>
-                  <div>We have many varieties of food that you can choose among.</div>
+                  <div>We have many varieties of components that you can choose among.</div>
                 </div>
                 <div className="feature">
                   <div className="feature-title">
                     <i className="fa fa-check" aria-hidden="true"> </i>
                       Highest Quality
                   </div>
-                  <div>Buy food that is handcrafted from people who put their soul into the food.</div>
+                  <div>Our return rate is 0%! Because their quality are too good.</div>
                 </div>
                 <div className="feature">
                   <div className="feature-title">
                     <i className="fa fa-check" aria-hidden="true"> </i>
                       Fastest Shipping
                   </div>
-                  <div>We use a secure transaction with our latest technological advancements.</div>
+                  <div>Shipping starts when you click the check out button.</div>
                 </div>
               </div>
 
