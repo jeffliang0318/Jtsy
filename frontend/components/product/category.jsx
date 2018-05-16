@@ -51,7 +51,10 @@ class Category extends React.Component {
   render(){
     if (this.state.load) {
       return (
-        <h1>LOADING...</h1>
+        <div className="lds-ripple">
+          <div></div>
+          <div></div>
+        </div>
       );
     } else {
       const products = this.props.products.map(

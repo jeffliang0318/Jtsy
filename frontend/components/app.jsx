@@ -11,6 +11,7 @@ import {
 
 import Modal from './modal/modal';
 import GreetingContainer from './greeting/greeting_container';
+import Footer from './greeting/footer';
 import LoginFormContainer from './session_form/login_form_container.jsx';
 import SignupFormContainer from './session_form/signup_form_container.jsx';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -40,6 +41,7 @@ const App = () => (
       <ProtectedRoute exact path="/users/:id" component={UserShowContainer}/>
       <Redirect to="/"/>
     </Switch>
+    <Footer />
   </div>
 );
 
