@@ -18,6 +18,7 @@ class productForm extends React.Component {
       description: "",
       quantity: 1,
       price: 0,
+      category:"automation",
       redirectToNewPage: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -134,18 +135,28 @@ class productForm extends React.Component {
             <div className='listing-title'>
               <div className='listing-detail'>
                 <label>
-                  <span>Title *</span>
+                  <span>Title </span><span className='must'>*</span>
                   <input type="text" value={this.state.title}
                     onChange={this.update('title')}
                     className="product-input"
                     />
                 </label>
                 <label>
-                  <span>Description *</span>
+                  <span>Description </span><span className='must'>*</span>
                   <textarea value={this.state.description}
                     onChange={this.update('description')}
-                    className="product-input"
-                    />
+                    className="product-input"/>
+                </label>
+                <label>
+                  <span>Category </span><span className='must'>*</span>
+                    <select onChange={this.update('category')} value={this.state.category}>
+                      <option value="automation">Automation Components</option>
+                      <option value="fasteners">Fasteners</option>
+                      <option value="materials">Materials</option>
+                      <option value="wiring">Wiring Components</option>
+                      <option value="processing">Processing Tools</option>
+                      <option value="electrical">Electrical Components</option>
+                    </select>
                 </label>
               </div>
             </div>

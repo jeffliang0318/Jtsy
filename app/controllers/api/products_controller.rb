@@ -2,7 +2,7 @@ class Api::ProductsController < ApplicationController
   before_action :require_logged_in, only: [:create, :edit, :destroy]
 
     def index
-      @products = Product.order("RANDOM()").limit(10)
+      @products = Product.order("RANDOM()").limit(4)
       render :index
     end
 
@@ -41,7 +41,7 @@ class Api::ProductsController < ApplicationController
 
     def product_params
       params.require(:product).permit(
-        :user_id,:img_url,:title,:description,:quantity,:price
+        :user_id,:img_url,:title,:description,:quantity,:price, :category
       )
     end
 end
