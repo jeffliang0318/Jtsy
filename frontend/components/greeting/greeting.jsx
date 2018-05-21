@@ -60,7 +60,7 @@ const Greeting = ({ currentUser, logout, openModal, login, titles, productId }) 
               <span>Home</span>
             </div>
           </Link>
-          <Link className="user-icon-link" to={`/users/${currentUser.id}`}>
+          <Link className="user-icon-link" to={`/currentUser/${currentUser.id}`}>
             <div className="user-icon">
               <i className="fa fa-user-circle" aria-hidden="true"></i>
               <span>You</span>

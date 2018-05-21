@@ -4,7 +4,7 @@ import {RECEIVE_ALL_PRODUCTS,
   RECEIVE_PRODUCT,
   REMOVE_PRODUCT} from '../actions/product_actions';
 
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_SELLER } from '../actions/session_actions';
 
   const productReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
@@ -18,9 +18,11 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
         delete newState[action.id];
         return newState;
       case RECEIVE_CURRENT_USER:
-          const product = action.payload.products;
+          let product = action.payload.products;
           return merge({}, oldState, product);
-
+      case RECEIVE_SELLER:
+          product = action.payload.products;
+          return merge({}, oldState, product);
       default:
         return oldState;
 

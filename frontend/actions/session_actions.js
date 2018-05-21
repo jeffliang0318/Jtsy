@@ -1,11 +1,17 @@
 import * as APIUtil from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const RECEIVE_SELLER = 'RECEIVE_SELER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const receiveCurrentUser = payload => ({
   type: RECEIVE_CURRENT_USER,
+  payload
+});
+
+export const receiveSeller = payload => ({
+  type: RECEIVE_SELLER,
   payload
 });
 
@@ -43,5 +49,10 @@ export const logout = () => dispatch => (
 export const fetchUser = (id) => dispatch => (
   APIUtil.fetchUser(id).then(payload => (
     dispatch(receiveCurrentUser(payload))
+  ))
+);
+export const fetchSeller = (id) => dispatch => (
+  APIUtil.fetchUser(id).then(payload => (
+    dispatch(receiveSeller(payload))
   ))
 );

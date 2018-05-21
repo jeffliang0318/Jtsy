@@ -21,7 +21,8 @@ class ProductShow extends React.Component {
     };
   }
   componentDidMount(){
-    this.props.fetchProduct(this.props.match.params.id);
+    this.props.fetchProduct(this.props.match.params.id).then( product =>
+    this.props.fetchSeller(this.props.product.user_id));
     if (this.props.currentUser) {
       this.props.fetchShoppingCartItems();
     }
@@ -67,32 +68,51 @@ class ProductShow extends React.Component {
     }
   }
   render(){
+
     return(
-      (!this.props.product) ?
+      (!this.props.product) || (!this.props.seller) ?
       <h1>...</h1> :
         (
       <div className='main-show'>
-        <div className="left-column">
-          <img className="product-img" src={this.props.product.img_url}/>
-          <div className="sell-item-description">
-            <h2>Component Detail</h2>
-            <p>{this.props.product.description}</p>
+        <div className='top-row'>
+          <div className="left-column">
+            <div className='supplier-info'>
+              <Link to={`/user/${this.props.seller.id}`}>
+                <h2>Supplier: </h2>
+                <h2 className='sell-name'>
+                  {this.props.seller.name}</h2>
+              </Link>
+            </div>
+          </div>
+          <div className='right-column'>
+            <ul>
+            </ul>
           </div>
         </div>
-        <div className="right-column">
-          <div className="cart-info">
-            <div className="product-info">
-              <span className="title">{this.props.product.title}</span>
-              <span className="price">${this.props.product.price}</span>
+        <hr></hr>
+        <div className='bot-row'>
+          <div className="left-column">
+            <img className="product-img" src={this.props.product.img_url}/>
+            <div className="sell-item-description">
+              <h2>Component Detail</h2>
+              <p>{this.props.product.description}</p>
             </div>
-            { this.addToCart() }
-            { this.productDelete() }
-            <div className="shipping-detail">
-              <p>Shipping & returns</p>
-              <br />
+          </div>
+          <div className="right-column">
+            <div className="cart-info">
+              <div className="product-info">
+                <span className="title">{this.props.product.title}</span>
+                <span className="price">${this.props.product.price}</span>
+              </div>
+              { this.addToCart() }
+              { this.productDelete() }
+              <div className="shipping-detail">
+                <p>Shipping & returns</p>
+                <br />
                 <li>Ready to ship in 3-5 days.</li>
                 <li>Made in Japan.</li>
                 <li>Exceptions may apply. See return policy</li>
+              </div>
             </div>
           </div>
         </div>

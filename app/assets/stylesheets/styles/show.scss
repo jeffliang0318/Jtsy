@@ -1,7 +1,7 @@
 .main-show {
   display: flex;
-    justify-content: space-around;
-    padding-top: 45px;
+  flex-direction: column;
+  align-items: center;
 }
 .left-column {
   width: 35vw;
@@ -57,6 +57,24 @@
 }
 .shipping-detail p {
   margin: 0px;
+}
+.supplier-info {
+  display: flex;
+}
+.bot-row {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.top-row {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2vh;
+}
+.sell-name {
+  text-align: center;
 }
 .add-to-cart-button {
   display: flex;

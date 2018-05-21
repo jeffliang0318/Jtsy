@@ -8,7 +8,7 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-class UserShow extends React.Component {
+class SellerShow extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -16,9 +16,8 @@ class UserShow extends React.Component {
     };
   }
   componentDidMount(){
-
     this.props.fetchShoppingCartItems().then(() =>
-      this.props.fetchUser(this.props.match.params.id).then(() =>
+      this.props.fetchSeller(this.props.match.params.id).then(seller =>
         this.setState({load: false})
       )
     );
@@ -32,7 +31,7 @@ class UserShow extends React.Component {
       return null;
     } else {
 
-    const productItems = this.props.currentUser.product_ids.map(productId =>
+    const productItems = this.props.seller.product_ids.map(productId =>
       <div className="each-item-in-user-show"key={productId}>
         <section>
           <Link to={`/product/${productId}`}
@@ -55,13 +54,13 @@ class UserShow extends React.Component {
     return(
       <div className="user-info">
         <div className="user-detail">
-          <h1>Hi, {this.props.currentUser.name}</h1>
-          <h2>email: {this.props.currentUser.email}</h2>
+          <h1>Hi, {this.props.seller.name}</h1>
+          <h2>email: {this.props.seller.email}</h2>
         </div>
         <div className="products-and-carts">
           <div className="user-sell-products">
             <h3>Products to sell</h3>
-            <span>{this.props.currentUser.product_ids.length} items in your shop</span>
+            <span>{this.props.seller.product_ids.length} items in your shop</span>
             <ul className="products-for-sell">
               { productItems }
             </ul>
@@ -72,4 +71,4 @@ class UserShow extends React.Component {
   }}
 }
 
-export default UserShow;
+export default SellerShow;

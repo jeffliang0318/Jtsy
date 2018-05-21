@@ -21,6 +21,7 @@ import CategoryContainer from './product/category_container';
 import ProductCreateContainer from './product/product_create_container';
 import ProductEditContainer from './product/product_edit_container';
 import UserShowContainer from './user/user_show_container';
+import SellerShowContainer from './user/seller_show_container';
 import SearchContainer from './search/search_container';
 import CartContainer from './cart/cart_container';
 const App = () => (
@@ -34,14 +35,15 @@ const App = () => (
         <Route exact path="/" component={ProductIndexContainer}/>
         <Route exact path="/product/:id" component={ProductShowContainer}/>
         <Route exact path="/category/:category" component={ CategoryContainer }/ >
-          <ProtectedRoute exact path="/products/new"
-            component={ ProductCreateContainer }/>
-          <ProtectedRoute exact path="/products/:id/edit"
-            component={ ProductEditContainer }/>
-          <Route exact path="/users/:id/cart" component={ CartContainer }/ >
-            <ProtectedRoute exact path="/users/:id" component={UserShowContainer}/>
-            <Redirect to="/"/>
-          </Switch>
+        <Route exact path="/user/:id" component={ SellerShowContainer }/ >
+        <ProtectedRoute exact path="/products/new"
+          component={ ProductCreateContainer }/>
+        <ProtectedRoute exact path="/products/:id/edit"
+          component={ ProductEditContainer }/>
+        <Route exact path="/users/:id/cart" component={ CartContainer }/ >
+          <ProtectedRoute exact path="/currentUser/:id" component={UserShowContainer}/>
+          <Redirect to="/"/>
+        </Switch>
     </div>
     <Footer />
   </div>
