@@ -67,7 +67,7 @@ class ProductIndex extends React.Component {
 
                 <hr></hr>
                 <div className='slogan-div'>
-                  <strong className="slogan">Most sold products!</strong>
+                  <strong className="slogan">Hot Items!</strong>
                 </div>
                 <div className='product-index'>
                   <ul className='product-index-items'>

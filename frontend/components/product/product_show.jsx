@@ -76,17 +76,13 @@ class ProductShow extends React.Component {
       <div className='main-show'>
         <div className='top-row'>
           <div className="left-column">
-            <div className='supplier-info'>
-              <Link to={`/user/${this.props.seller.id}`}>
-                <h2>Supplier: </h2>
-                <h2 className='sell-name'>
-                  {this.props.seller.name}</h2>
+              <Link to={`/user/${this.props.seller.id}`} className='supplier-name'>
+                <div className='supplier-info'>
+                <h1>Supplier: </h1>
+                <h1 className='sell-name'>
+                  {this.props.seller.name}</h1>
+              </div>
               </Link>
-            </div>
-          </div>
-          <div className='right-column'>
-            <ul>
-            </ul>
           </div>
         </div>
         <hr></hr>

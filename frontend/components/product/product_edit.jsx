@@ -18,6 +18,7 @@ class ProductEdit extends React.Component {
       description: "",
       quantity: 1,
       price: 0,
+      category:"automation",
       redirectToNewPage: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -99,77 +100,97 @@ class ProductEdit extends React.Component {
     return(
       <div className='product-create-container'>
         <form onSubmit={this.handleSubmit} className="product-form-box" >
-          <div className='upload-photos'>
-            <div className='photos-upload-instruction'>
-              <div className='instruction-title'>
-                <h3>Photo</h3>
-                <span>Add as many as you can so buyers can
-                  see every detail</span>
-              </div>
-              <div className='instruction-detail'>
-                <div className="upload-description">
-                  <span>Photos *</span>
-                  <span>Use up to ten photos to show your items most
-                    important qualities</span>
-                </div>
-                <div className='upload-photo-section'>
-                  <Dropzone
-                    multiple={false}
-                    accept="image/*"
-                    onDrop={this.onImageDrop.bind(this)}>
-                    <p className="add-photo">Drop an image or click to select a file to upload.</p>
-                  </Dropzone>
-                  <div className="uploaded-photo">
-                    {this.state.img_url === '' ? <div className="empty-box"></div> :
-                      <div>
-                        <img className="uploadedFile" src={this.state.img_url} />
-                      </div>}
+          <div className='top-row'>
+            <section className='left-column'>
+              <div className='upload-photos'>
+                <div className='photos-upload-instruction'>
+                  <div className='instruction-title'>
+                    <h2>Photo</h2>
+                  </div>
+                  <div className='instruction-detail'>
+                    <div className="upload-description">
+                      <span>Please upload a photo</span>
                     </div>
+                    <div className='upload-photo-section'>
+                      {this.state.img_url === '' ? <Dropzone multiple={false}
+                        accept="image/*"
+                        onDrop={this.onImageDrop.bind(this)}>
+                        <br></br>
+                        <p className="add-photo">Drop an image or click to select a file to upload.</p>
+                      </Dropzone> :
+                      <div className="empty-box"></div>}
+
+                      <div className="uploaded-photo">
+                        {this.state.img_url === '' ? <div className="empty-box"></div> :
+                          <div>
+                            <img className="uploadedFile" src={this.state.img_url} />
+                          </div>}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+            <section className='right-column'>
+              <div className='listing-details-instruction'>
+                <div className='instruction-title'>
+                  <h2>Listing details</h2>
+                </div>
+                <span>Tell the world about your item and why they'll love it.</span>
+                <div className='listing-title'>
+                  <div className='listing-detail'>
+                    <label>
+                      <span>Category </span><span className='must'>*</span>
+                      <select onChange={this.update('category')} value={this.state.category}>
+                        <option value="automation">Automation Components</option>
+                        <option value="fasteners">Fasteners</option>
+                        <option value="materials">Materials</option>
+                        <option value="wiring">Wiring Components</option>
+                        <option value="processing">Processing Tools</option>
+                        <option value="electrical">Electrical Components</option>
+                      </select>
+                    </label>
+                    <label>
+                      <span>Title </span><span className='must'>*</span>
+                      <input type="text" value={this.state.title}
+                        onChange={this.update('title')}
+                        className="product-input"
+                        />
+                    </label>
+                    <label>
+                      <span>Description </span><span className='must'>*</span>
+                      <textarea value={this.state.description}
+                        onChange={this.update('description')}
+                        className="product-input"/>
+                    </label>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className='listing-details-instruction'>
-            <h3>Listing details</h3>
-            <span>Tell the world about your item and why they'll love it.</span>
-            <div className='listing-title'>
-              <div className='listing-detail'>
-                <label>
-                  <span>Title *</span>
-                  <input type="text" value={this.state.title}
-                    onChange={this.update('title')}
-                    className="product-input"
-                    />
-                </label>
-                <label>
-                  <span>Description *</span>
-                  <textarea value={this.state.description}
-                    onChange={this.update('description')}
-                    className="product-input"
-                    />
-                </label>
+              <div className="price-and-quantity">
+                  <div className='instruction-title'>
+                    <h2>Inventory and pricing</h2>
+                  </div>
+                <div className="inventory-price-form">
+                  <label>
+                    <span>Price *</span>
+                    <input value={this.state.price}
+                      onChange={this.update('price')}/>
+                  </label>
+                  <label>
+                    <span>Quantity *</span>
+                    <input value={this.state.quantity}
+                      onChange={this.update('quantity')}/>
+                  </label>
+                </div>
               </div>
-            </div>
+            </section>
           </div>
-          <div className="price-and-quantity">
-            <h3>Inventory and pricing</h3>
-            <div className="inventory-price-form">
-              <label>
-                <span>Price *</span>
-                <input value={this.state.price}
-                  onChange={this.update('price')}/>
-              </label>
-              <label>
-                <span>Quantity *</span>
-                <input value={this.state.quantity}
-                  onChange={this.update('quantity')}/>
-              </label>
+          <div className='product-bot-row'>
+            <div className="submit-button">
+              <Link className="cancel-link"to="/">Cancel</Link>
+              <input className="product-submit" type="submit"
+                value={this.props.formType}/>
             </div>
-          </div>
-          <div className="submit-button">
-            <Link className="cancel-link"to="/">Cancel</Link>
-            <input className="product-submit" type="submit"
-              value={this.props.formType}/>
           </div>
         </form>
       </div>

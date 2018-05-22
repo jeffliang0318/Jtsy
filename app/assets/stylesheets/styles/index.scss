@@ -71,9 +71,12 @@ width: 60vw;
     justify-content: space-around;
 }
 .category-bar a{
-  text-decoration: none;
+  // text-decoration: none;
+  font-size: larger;
   color: black;
+
 }
+
 .product-index-item a{
   display: inline-grid;
 }

@@ -2,7 +2,7 @@ class Api::ProductsController < ApplicationController
   before_action :require_logged_in, only: [:create, :edit, :destroy]
 
     def index
-      @products = Product.order("RANDOM()").limit(4)
+      @products = Product.order("RANDOM()").limit(10)
       render :index
     end
 

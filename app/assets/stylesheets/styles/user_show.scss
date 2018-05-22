@@ -37,7 +37,13 @@ height: 100%;
 
 .user-detail {
   padding: 1vw;
+  width: 94%;
 }
+.user-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
 .each-item-in-user-show {
   border: 1px solid grey;
   border-radius: 10px;

@@ -54,7 +54,7 @@ class SellerShow extends React.Component {
     return(
       <div className="user-info">
         <div className="user-detail">
-          <h1>Hi, {this.props.seller.name}</h1>
+          <h1>Contact {this.props.seller.name}</h1>
           <h2>email: {this.props.seller.email}</h2>
         </div>
         <div className="products-and-carts">

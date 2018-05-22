@@ -68,14 +68,15 @@
   flex-wrap: wrap;
 }
 .top-row {
-  width: 90%;
+  width: 92%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: left;
   margin-bottom: 2vh;
 }
 .sell-name {
   text-align: center;
 }
+
 .add-to-cart-button {
   display: flex;
   flex-direction: column;
@@ -90,4 +91,8 @@
 }
 .sell-item-description h2 {
   margin: 2vh 0 1vh 0;
+}
+.supplier-name {
+  color: black;
+
 }

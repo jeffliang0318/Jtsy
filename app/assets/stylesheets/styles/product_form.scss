@@ -3,17 +3,31 @@
   padding: 10px;
   margin: 10px;
 }
-
+.product-form-box{
+  width: 95%;
+  margin: auto;
+}
 .instruction-detail {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .upload-photo-section {
   display: flex;
 }
+.upload-photos{
+  border-right: 1px solid lightgrey;
+}
+.instruction-title{
+  margin-bottom: 1vh;
+}
 .uploadedFile {
   height: 200px;
   width: auto;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+.right-column{
+  margin-left: 2vw;
 }
 .plz-login-img {
   display: flex;
@@ -23,7 +37,9 @@
   margin: auto;
   top: 30px;
 }
-
+.product-bot-row{
+  width: 92%;
+}
 .plz-login-img strong{
   font-size: 45px;
 }
@@ -59,4 +75,22 @@
     padding: 6px;
     margin-right: 1vw;
   }
+}
+.listing-title{
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+.listing-detail{
+  display: flex;
+  flex-wrap: wrap;
+}
+.listing-detail > label {
+  margin: 10px;
+}
+.inventory-price-form > label {
+  margin: 10px;
+}
+
+.product-input{
+  width: 33vw;
 }

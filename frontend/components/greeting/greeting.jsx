@@ -28,8 +28,8 @@ const Greeting = ({ currentUser, logout, openModal, login, titles, productId }) 
         <button className="sign-in-button" onClick={() => openModal('login')}>Sign in</button>
       </div>
     </nav>
-      <div className="category-bar">
-        <Link to="/category/automation">Automation Components</Link>
+      <div className="category-bar custom-underline">
+        <Link to="/category/automation custom-underline">Automation Components</Link>
         <Link to="/category/fasteners" >Fasteners</Link>
         <Link to="/category/materials">Materials</Link>
         <Link to="/category/wiring">Wiring Components</Link>
