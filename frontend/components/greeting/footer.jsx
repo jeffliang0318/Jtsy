@@ -18,7 +18,7 @@ class Footer extends React.Component {
           </div>
           <div className="FooterRight" >
             <div><i className="far fa-copyright"></i> 2018 Jtsy</div>
-            <a className='footer-links' href="https://www.jeffliang.us">
+            <a className='footer-links' href="https://jeffliang0318.github.io/Portfolio/">
               <h2 className='footer-website'>Jeff's Website</h2>
             </a>
             <a className='footer-links' href="https://github.com/jeffliang0318">
