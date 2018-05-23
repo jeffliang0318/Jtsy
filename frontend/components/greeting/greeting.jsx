@@ -29,7 +29,7 @@ const Greeting = ({ currentUser, logout, openModal, login, titles, productId }) 
       </div>
     </nav>
       <div className="category-bar custom-underline">
-        <Link to="/category/automation custom-underline">Automation Components</Link>
+        <Link to="/category/automation">Automation Components</Link>
         <Link to="/category/fasteners" >Fasteners</Link>
         <Link to="/category/materials">Materials</Link>
         <Link to="/category/wiring">Wiring Components</Link>
